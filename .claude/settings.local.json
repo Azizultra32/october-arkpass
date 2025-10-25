@@ -1,0 +1,44 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/ali/Library/**)",
+      "Bash(cat:*)",
+      "Bash(claude mcp add:*)",
+      "Bash(claude mcp list:*)",
+      "Bash(claude mcp:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(env)",
+      "Bash(lsof:*)",
+      "Bash(openspec list:*)",
+      "Bash(openspec validate:*)",
+      "Bash(openspec show:*)",
+      "Bash(git add:*)",
+      "Bash(git init:*)",
+      "Bash(git config:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nComplete conditions management date/time framework specification\n\nCORRECTED framework assignments based on user clarification:\n- Framework 1 (Within 1yr/5yr/Over 5yr/Age): Chronic diagnosis date, Transient-Recurrent last occurrence, Transient-Resolved start date\n- Framework 2 (Within 1mo/6mo/2yr/More 2yr): Transient-Resolved end date ONLY\n\nKey files:\n- DATE_TIME_SELECTION_FRAMEWORK.md:9-14 - Framework 1 use cases corrected\n- DATE_TIME_SELECTION_FRAMEWORK.md:193-195 - Framework 2 use cases corrected  \n- DATE_TIME_SELECTION_FRAMEWORK.md:441-457 - getDateFramework() logic updated\n- DATE_TIME_SELECTION_FRAMEWORK.md:214-286 - Framework 2 paths with correct dropdown options\n- IMPORTANT_DATE_FIELDS_SUMMARY.md:16-26 - Framework assignment summary table\n- DATE_FRAMEWORK_VALIDATION.md - Complete validation reference with testing checklist\n\nFeatures documented:\n- Two-framework system based on likelihood of recent occurrence\n- Progressive disclosure (year → month → date, stop at any level)\n- Voice input with LLM interpretation\n- Certainty levels (optional): certain, somewhat_certain, uncertain, null\n- Age-based input (\"I was 25 years old\")\n- Complete dropdown options for all paths (no placeholders)\n\nRelated documentation:\n- CONDITIONS_SCREENS_SPECS.md - 7 Figma screens extracted\n- CONDITIONS_FLOW_DIAGRAM.md - 10 text-based flow diagrams\n- CONDITIONS_DATE_TIME_FIELDS_ADDENDUM.md - Technical addendum\n- openspec/changes/add-conditions-management/ - OpenSpec proposal with 100+ tasks\n\n🤖 Generated with Claude Code\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+    ]
+  },
+  "autoApproveTools": true,
+  "autoExecute": true,
+  "skipConfirmations": true,
+  "automation": {
+    "enabled": true,
+    "mode": "full",
+    "requireConfirmation": false,
+    "tools": {
+      "bash": {
+        "autoApprove": true
+      },
+      "write": {
+        "autoApprove": true
+      },
+      "edit": {
+        "autoApprove": true
+      },
+      "read": {
+        "autoApprove": true
+      }
+    }
+  }
+}
