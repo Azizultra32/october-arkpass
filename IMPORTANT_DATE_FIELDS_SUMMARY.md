@@ -192,6 +192,8 @@ Validation: End Date must be >= Start Date
 - **Flow diagrams**: [CONDITIONS_FLOW_DIAGRAM.md](CONDITIONS_FLOW_DIAGRAM.md) (Flow 10)
 - **Original screens**: [CONDITIONS_SCREENS_SPECS.md](CONDITIONS_SCREENS_SPECS.md)
 - **OpenSpec**: [openspec/changes/add-conditions-management/](openspec/changes/add-conditions-management/)
+- **Display rollout**: [DISPLAY_COLUMNS_ROLLOUT.md](DISPLAY_COLUMNS_ROLLOUT.md)
+- **Logic + examples**: [MEDICATIONS_DATE_FIELD_EXAMPLES.md](MEDICATIONS_DATE_FIELD_EXAMPLES.md), [logic/index.md](logic/index.md)
 
 ---
 

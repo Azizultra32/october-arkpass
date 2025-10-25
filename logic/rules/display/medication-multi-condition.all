@@ -1,0 +1,70 @@
+RULE: Medication.MultiCondition.Display
+
+## Metadata
+- **Category**: Display
+- **Entities**: @Medication, @MedicationCondition, @Condition
+- **Views**: UI[Pt], UI[Pr], DB
+- **Created**: 2025-10-24
+
+## Logic Notation
+
+WHEN @MedicationCondition.CHANGE FOR @Medication
+THEN:
+  -- Rebuild cached representation of linked conditions
+  COMPUTE linkedConditions = ORDER(
+    FIND @MedicationCondition WHERE medicationId = @Medication.id,
+    BY createdAt
+  )
+  STORE @Medication.multiCondition_raw = linkedConditions
+
+FOR VIEW UI[Pt]:
+  LET otherConditions = FILTER(linkedConditions, c => c.conditionId != contextConditionId)
+  LET count = COUNT(otherConditions)
+  IF count = 0
+    THEN SHOW ""
+  ELSE IF count = 1
+    THEN SHOW "(+ 1 other condition)"
+  ELSE
+    SHOW "(+ " + count + " other conditions)"
+  PROVIDE hyperlinks = MAP(otherConditions, c => {
+    id: c.conditionId,
+    name: c.condition.name
+  })
+
+FOR VIEW UI[Pr]:
+  LET codes = MAP(linkedConditions, c =>
+    (c.certainty = "uncertain" ? "(?)" : "") + (c.icd10Code ?? c.icd9Code)
+  )
+  IF COUNT(codes) = 0
+    THEN SHOW ""
+  ELSE SHOW "[" + JOIN(codes, " + ") + "]"
+  PROVIDE conditionNames = MAP(linkedConditions, c => {
+    name: c.condition.name + (c.certainty = "uncertain" ? " (uncertain)" : "")
+  })
+
+FOR VIEW DB:
+  STORE columns:
+    multi_condition_raw JSONB,
+    multi_condition_display_pt VARCHAR(255),
+    multi_condition_display_pr VARCHAR(500),
+    multi_condition_display_active VARCHAR(20)
+
+  UPDATE multi_condition_display_pt, multi_condition_display_pr, multi_condition_display_active
+    WHEN linkedConditions change OR contextConditionId changes
+
+## Plain English
+When a medication is linked to more than one condition, patients see a simple “(+ N other conditions)” suffix that links to the other conditions, while providers see the full ICD code list (with uncertainty markers). The raw JSON snapshot of all links is stored so cached displays can be rebuilt quickly.
+
+## Examples
+### Example 1: Two conditions, patient viewing primary
+GIVEN medication “Spironolactone” linked to CHF (primary) and Hypokalemia  
+WHEN patient views CHF  
+THEN suffix = "(+ 1 other condition)" with hyperlink to Hypokalemia
+
+### Example 2: Two conditions, provider view
+GIVEN same linkage with Hypokalemia marked uncertain  
+THEN provider display = "[I50.9 + (?)E87.6]"
+
+## Related Rules
+- Medication.MultiCondition.Navigation
+- Medication.MultiCondition.Confirmation
