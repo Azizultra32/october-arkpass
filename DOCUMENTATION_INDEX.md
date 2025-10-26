@@ -278,7 +278,38 @@
 
 ---
 
-## UI/UX Patterns (Reusable Components)
+## OpenSpec UI Patterns (Reusable Components) 🆕
+
+### OpenSpec Consolidated Specification
+
+**[openspec/specs/ui-patterns/spec.md](openspec/specs/ui-patterns/spec.md)** ✅ NEW - MASTER SPECIFICATION
+- **Purpose**: Consolidated OpenSpec specification for all 6 UI patterns
+- **Requirements**: Complete OpenSpec-formatted requirements with scenarios
+- **Implementation Details**: Component structures, data models, database schemas
+- **Where Used**: Feature-by-feature usage mapping
+- **Dependencies**: Cross-pattern dependencies and integrations
+- **Compliance**: Accessibility, data integrity, performance, audit trail
+- **Line Count**: 529 lines
+- **Status**: ✅ Complete OpenSpec master spec - ready for implementation
+
+### Individual OpenSpec Pattern Files
+
+All pattern files converted to OpenSpec format with Purpose, Requirements, Implementation Details, Where Used, Dependencies, and Compliance sections:
+
+1. **[openspec/specs/ui-patterns/quick-add.md](openspec/specs/ui-patterns/quick-add.md)** (201 lines)
+2. **[openspec/specs/ui-patterns/dual-mode-date-input.md](openspec/specs/ui-patterns/dual-mode-date-input.md)** (236 lines)
+3. **[openspec/specs/ui-patterns/repeatable-entry.md](openspec/specs/ui-patterns/repeatable-entry.md)** (325 lines)
+4. **[openspec/specs/ui-patterns/field-level-editing.md](openspec/specs/ui-patterns/field-level-editing.md)** (264 lines)
+5. **[openspec/specs/ui-patterns/conditional-ui.md](openspec/specs/ui-patterns/conditional-ui.md)** (291 lines)
+6. **[openspec/specs/ui-patterns/multi-select.md](openspec/specs/ui-patterns/multi-select.md)** (323 lines)
+
+**Total**: 2,169 lines of OpenSpec UI pattern documentation
+
+---
+
+## Original UI/UX Pattern Documentation (Reference)
+
+These are the original detailed pattern documents. The OpenSpec versions above are the canonical specifications for implementation.
 
 ### 5. [DUAL_MODE_DATE_INPUT_COMPONENT.md](DUAL_MODE_DATE_INPUT_COMPONENT.md)
 **What it defines**: System-wide date input component supporting two input modes
