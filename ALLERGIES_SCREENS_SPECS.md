@@ -6,6 +6,21 @@
 
 ---
 
+## 🚨 IMPORTANT: Expansion Beyond Figma
+
+This document extracts the 7 screens visible in Figma. However, **product requirements extend significantly beyond these screens**. See **[ALLERGIES_EXPANSION_SPEC.md](ALLERGIES_EXPANSION_SPEC.md)** for the complete allergy/sensitivity tracking system including:
+
+- **5 Allergy Categories**: Medication, Food, Seasonal, Skin/Contact, Environmental
+- **Allergy vs Sensitivity Distinction**: Separate field for clinical accuracy
+- **Severity Classification**: Severe (anaphylaxis risk) vs Not Severe
+- **EpiPen Tracking**: Yes/No field for severe allergies
+- **Multi-Select Symptoms**: Category-specific symptom lists
+- **Enhanced Details Field**: Free-text for additional context
+
+**For implementation**: Use this document for UI layout/screens, refer to ALLERGIES_EXPANSION_SPEC.md for complete data model and business logic.
+
+---
+
 ## Screen Overview
 
 | # | Screen Name | Node ID | State | Purpose |
@@ -62,20 +77,32 @@
 - Content: Allergy name in bold (20px)
 - Clickable/tappable
 
-### ⚠️ CRITICAL QUESTIONS
+### Categories Shown in Figma
 
-1. **Does "Quick Add" support autocomplete/suggestions?**
-   - Medical allergy database?
-   - Common allergies dropdown?
+**Visible in List Screen**:
+1. **MEDICATION ALLERGIES** - Shown with example entries (Penicillins, Erythromycin)
+2. **ENVIRONMENTAL/SEASONAL/SKIN/OTHER** - Shown with empty state
 
-2. **What's the difference between Quick Add and Add with details?**
-   - Quick Add: Name only?
-   - Add with details: Opens full form with Onset + Details?
+**⚠️ PRODUCT EXPANSION**: Full system supports 5 distinct categories:
+- Medication
+- Food (not shown in Figma, but required)
+- Seasonal
+- Skin/Contact
+- Environmental
 
-3. **Are there predefined categories?**
-   - Medication allergies
-   - Environmental/seasonal/skin/other
-   - Food allergies? (not shown but common)
+See [ALLERGIES_EXPANSION_SPEC.md](ALLERGIES_EXPANSION_SPEC.md) for complete category specifications.
+
+### Quick Add Pattern
+
+**What Figma shows**:
+- Inline text input with "Add" button
+- Appears to create name-only entry
+
+**Implementation** (from QUICK_ADD_PATTERN.md):
+- Quick Add creates minimal record with **Name only**
+- User must later edit to add Category, Type, Severity, Symptoms, etc.
+- Records created via Quick Add are flagged as "incomplete"
+- "+ Add with details" button opens full form with all fields
 
 ---
 

@@ -122,8 +122,15 @@ Same expanded fields as Edit Medication (see above)
 - **Height**: 58px
 - **Placeholder**: "Select"
 - **Visibility**: Hidden by default, shown when "Show more" clicked
-- **⚠️ CRITICAL QUESTION**: What are the status options?
-  - Possible values: Active, Inactive, Discontinued, Completed, As Needed?
+- **Options** (CONFIRMED):
+  1. "Taking regularly as directed"
+  2. "Taking but not regularly"
+  3. "As needed"
+  4. "Discontinued"
+- **Notes**:
+  - Status alone is sufficient - NO discontinuation date field needed
+  - "Discontinued" status indicates medication is no longer being taken
+  - No date tracking for when medication was discontinued
 
 ---
 
@@ -161,20 +168,18 @@ Same expanded fields as Edit Medication (see above)
 2. Is "ORAL/SL/INJ/DROPS" the actual label text, or should it be "Route" or "Administration Method"?
 
 ### Status Dropdown
-**Current Status**: Placeholder shows "Select", options unknown
+**Status**: ✅ CONFIRMED
 
-**Questions**:
-1. What are ALL the status options?
-   - Active
-   - Inactive
-   - Discontinued
-   - Completed
-   - As Needed (PRN)
-   - Temporary
-   - Long-term
-   - Other?
+**Options**:
+1. "Taking regularly as directed"
+2. "Taking but not regularly"
+3. "As needed"
+4. "Discontinued"
 
-2. How does status relate to the medication lifecycle?
+**Implementation Notes**:
+- NO discontinuation date field required
+- Status = "Discontinued" is sufficient to indicate medication is no longer being taken
+- Simplifies user experience - status alone conveys the medication lifecycle state
 
 ---
 

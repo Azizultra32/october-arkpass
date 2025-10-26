@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergies UI Mockups - Production Version</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #000;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .mockup-section {
+            margin-bottom: 60px;
+        }
+
+        .mockup-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .screen-container {
+            display: inline-block;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            overflow: hidden;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            vertical-align: top;
+        }
+
+        .screen {
+            width: 390px;
+            height: auto;
+            background: #fff;
+        }
+
+        /* Header */
+        .header {
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .back-button {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .header-title {
+            flex: 1;
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            margin-left: 12px;
+        }
+
+        .save-button {
+            width: 77px;
+            height: 42px;
+            background: transparent;
+            border: 1px solid #666;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Content */
+        .content {
+            padding: 16px;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .field-label.required::after {
+            content: " (Required)";
+            color: #dc3445;
+        }
+
+        .text-input {
+            width: 100%;
+            height: 58px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 0 16px;
+            font-size: 16px;
+            color: #000;
+            background: #fff;
+        }
+
+        .text-input:focus {
+            outline: none;
+            border-color: #000;
+        }
+
+        .dropdown {
+            width: 100%;
+            height: 58px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 0 16px;
+            font-size: 16px;
+            color: #000;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .dropdown-icon {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Radio buttons */
+        .radio-group {
+            display: flex;
+            gap: 24px;
+            margin-top: 12px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .radio-button {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .radio-button.selected {
+            border-color: #000;
+        }
+
+        .radio-button.selected::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .radio-label {
+            font-size: 16px;
+            color: #000;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 20px 0;
+        }
+
+        /* Show more */
+        .show-more {
+            text-align: center;
+            color: #0066cc;
+            font-size: 16px;
+            padding: 16px;
+            cursor: pointer;
+        }
+
+        /* Dual mode date */
+        .dual-date {
+            display: flex;
+            gap: 16px;
+        }
+
+        .mode-selector {
+            width: 107px;
+            height: 58px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 0 12px;
+            font-size: 16px;
+            color: #000;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .date-input {
+            flex: 1;
+            height: 58px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 0 16px;
+            font-size: 16px;
+            color: #999;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Textarea */
+        .textarea {
+            width: 100%;
+            min-height: 90px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 16px;
+            font-size: 16px;
+            color: #000;
+            line-height: 24px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        /* Documents */
+        .section-header {
+            font-size: 12px;
+            font-weight: 700;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .document-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            font-size: 16px;
+            color: #000;
+        }
+
+        .delete-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .add-button {
+            width: 100%;
+            height: 48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #fff;
+            font-size: 16px;
+            color: #000;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        .delete-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px;
+            margin-top: 24px;
+            color: #dc3445;
+            font-size: 16px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 100%;
+        }
+
+        /* Warning banner */
+        .warning-banner {
+            background: #fff3cd;
+            border: 2px solid #ff9800;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-icon {
+            font-size: 20px;
+        }
+
+        .warning-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e65100;
+        }
+
+        /* Allergy card */
+        .allergy-card {
+            border: 1px solid #666;
+            border-radius: 4px;
+            padding: 16px;
+            margin-bottom: 12px;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .allergy-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .allergy-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #dc3445;
+            border-radius: 50%;
+        }
+
+        .allergy-details {
+            font-size: 14px;
+            color: #666;
+            line-height: 20px;
+        }
+
+        /* List screen specific */
+        .share-button {
+            width: 100%;
+            height: 58px;
+            background: #000;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 4px;
+            border: none;
+            margin-bottom: 24px;
+            cursor: pointer;
+        }
+
+        .screen-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .quick-add {
+            display: flex;
+            height: 48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .quick-add-input {
+            flex: 1;
+            border: none;
+            padding: 0 16px;
+            font-size: 16px;
+        }
+
+        .quick-add-button {
+            width: 80px;
+            background: #000;
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .add-with-details {
+            width: 100%;
+            height: 42px;
+            background: transparent;
+            border: 1px solid #666;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
+        .empty-state {
+            font-size: 16px;
+            color: #999;
+            padding: 16px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .note {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 16px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Allergies UI Mockups - Production Version</h1>
+        <p class="subtitle">Complete screens with all safety-critical fields (Category, Severity, EpiPen)</p>
+
+        <!-- SCREEN 1: List View -->
+        <div class="mockup-section">
+            <h2 class="mockup-title">Screen 1: Allergies List (With Warning Banner)</h2>
+            <div class="screen-container">
+                <div class="screen">
+                    <div class="content">
+                        <button class="share-button">Share Your Health Record</button>
+
+                        <div class="screen-title">Allergies</div>
+
+                        <div class="quick-add">
+                            <input class="quick-add-input" placeholder="Quick Add" />
+                            <button class="quick-add-button">Add</button>
+                        </div>
+
+                        <button class="add-with-details">+ Add with details</button>
+
+                        <div class="divider"></div>
+
+                        <div class="section-header">MEDICATION ALLERGIES</div>
+
+                        <!-- Severe allergy with warning -->
+                        <div class="allergy-card">
+                            <div class="warning-banner">
+                                <span class="warning-icon">⚠️</span>
+                                <span class="warning-text">SEVERE - EPIPEN REQUIRED</span>
+                            </div>
+                            <div class="allergy-card-header">
+                                <span class="allergy-name">Penicillins</span>
+                                <span class="status-dot"></span>
+                            </div>
+                            <div class="allergy-details">
+                                Category: Medication<br>
+                                Severity: Severe<br>
+                                EpiPen: Yes
+                            </div>
+                        </div>
+
+                        <!-- Regular allergy -->
+                        <div class="allergy-card">
+                            <div class="allergy-card-header">
+                                <span class="allergy-name">Erythromycin</span>
+                                <span class="status-dot"></span>
+                            </div>
+                            <div class="allergy-details">
+                                Category: Medication<br>
+                                Severity: Not Severe
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="section-header">ENVIRONMENTAL/SEASONAL/SKIN/OTHER</div>
+                        <div class="empty-state">No environmental/seasonal/skin/other allergies</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Key Features:</strong><br>
+                • Orange warning banner for severe allergies with EpiPen<br>
+                • Category, Severity, and EpiPen status visible in list<br>
+                • Red dot indicates incomplete data<br>
+                • Quick Add for fast name-only entry
+            </div>
+        </div>
+
+        <!-- SCREEN 2: Edit Allergy (Collapsed) -->
+        <div class="mockup-section">
+            <h2 class="mockup-title">Screen 2: Edit Allergy (Collapsed - Required Fields Only)</h2>
+            <div class="screen-container">
+                <div class="screen">
+                    <div class="header">
+                        <div class="back-button">←</div>
+                        <div class="header-title">Penicillins</div>
+                        <button class="save-button">Save</button>
+                    </div>
+
+                    <div class="content">
+                        <div class="field">
+                            <label class="field-label required">Name</label>
+                            <input class="text-input" value="Penicillins" />
+                        </div>
+
+                        <div class="field">
+                            <label class="field-label required">Category</label>
+                            <div class="dropdown">
+                                <span>Medication</span>
+                                <span class="dropdown-icon">▼</span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="field-label required">Severity</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <div class="radio-button selected"></div>
+                                    <span class="radio-label">Severe</span>
+                                </div>
+                                <div class="radio-option">
+                                    <div class="radio-button"></div>
+                                    <span class="radio-label">Not Severe</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="field-label required">EpiPen Prescribed?</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <div class="radio-button selected"></div>
+                                    <span class="radio-label">Yes</span>
+                                </div>
+                                <div class="radio-option">
+                                    <div class="radio-button"></div>
+                                    <span class="radio-label">No</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="show-more">Show more ▼</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Safety-Critical Fields (NEW):</strong><br>
+                1. <strong>Category</strong> - Dropdown with 5 options (Medication, Food, Seasonal, Skin/Contact, Environmental)<br>
+                2. <strong>Severity</strong> - Radio buttons (Severe / Not Severe)<br>
+                3. <strong>EpiPen</strong> - Radio buttons (Yes / No) - Only shows if Severity = "Severe"
+            </div>
+        </div>
+
+        <!-- SCREEN 3: Edit Allergy (Expanded) -->
+        <div class="mockup-section">
+            <h2 class="mockup-title">Screen 3: Edit Allergy (Expanded - All Fields)</h2>
+            <div class="screen-container">
+                <div class="screen">
+                    <div class="header">
+                        <div class="back-button">←</div>
+                        <div class="header-title">Penicillins</div>
+                        <button class="save-button">Save</button>
+                    </div>
+
+                    <div class="content">
+                        <div class="field">
+                            <label class="field-label required">Name</label>
+                            <input class="text-input" value="Penicillins" />
+                        </div>
+
+                        <div class="field">
+                            <label class="field-label required">Category</label>
+                            <div class="dropdown">
+                                <span>Medication</span>
+                                <span class="dropdown-icon">▼</span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="field-label required">Severity</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <div class="radio-button selected"></div>
+                                    <span class="radio-label">Severe</span>
+                                </div>
+                                <div class="radio-option">
+                                    <div class="radio-button"></div>
+                                    <span class="radio-label">Not Severe</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="field-label required">EpiPen Prescribed?</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <div class="radio-button selected"></div>
+                                    <span class="radio-label">Yes</span>
+                                </div>
+                                <div class="radio-option">
+                                    <div class="radio-button"></div>
+                                    <span class="radio-label">No</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="field">
+                            <label class="field-label">Onset</label>
+                            <div class="dual-date">
+                                <div class="mode-selector">
+                                    <span>Age</span>
+                                    <span class="dropdown-icon">▼</span>
+                                </div>
+                                <div class="date-input">
+                                    <span>Enter Age</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="field-label">Details</label>
+                            <textarea class="textarea" placeholder="Enter additional details...">First reaction at age 5. Required hospitalization. Now carries EpiPen at all times.</textarea>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="section-header">DOCUMENTS</div>
+                        <div class="document-item">
+                            <span>Document 1</span>
+                            <span class="delete-icon">🗑️</span>
+                        </div>
+                        <div class="document-item">
+                            <span>Document 2</span>
+                            <span class="delete-icon">🗑️</span>
+                        </div>
+                        <button class="add-button">+ Add Documents</button>
+
+                        <div class="divider"></div>
+
+                        <div class="show-more">Show less ▲</div>
+
+                        <div class="divider"></div>
+
+                        <button class="delete-button">
+                            <span class="delete-icon">🗑️</span>
+                            <span>Delete Allergy</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Complete Field Order:</strong><br>
+                1. Name (Required) - from Figma ✓<br>
+                2. <strong>Category (Required) - NEW ⚠️</strong><br>
+                3. <strong>Severity (Required) - NEW ⚠️</strong><br>
+                4. <strong>EpiPen (Required if Severe) - NEW ⚠️</strong><br>
+                5. Onset - from Figma ✓<br>
+                6. Details - from Figma ✓<br>
+                7. Documents - from Figma ✓
+            </div>
+        </div>
+
+        <!-- SCREEN 4: Conditional Logic Demo -->
+        <div class="mockup-section">
+            <h2 class="mockup-title">Screen 4: Conditional Logic - EpiPen Field Appears/Disappears</h2>
+
+            <div class="screen-container">
+                <div class="screen">
+                    <div class="header">
+                        <div class="back-button">←</div>
+                        <div class="header-title">Aspirin</div>
+                        <button class="save-button">Save</button>
+                    </div>
+
+                    <div class="content">
+                        <div class="field">
+                            <label class="field-label required">Severity</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <div class="radio-button"></div>
+                                    <span class="radio-label">Severe</span>
+                                </div>
+                                <div class="radio-option">
+                                    <div class="radio-button selected"></div>
+                                    <span class="radio-label">Not Severe</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="padding: 20px; background: #f5f5f5; border-radius: 4px; text-align: center; color: #999; font-size: 14px; margin-top: 20px;">
+                            EpiPen field hidden<br>(Not Severe selected)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-container">
+                <div class="screen">
+                    <div class="header">
+                        <div class="back-button">←</div>
+                        <div class="header-title">Aspirin</div>
+                        <button class="save-button">Save</button>
+                    </div>
+
+                    <div class="content">
+                        <div class="field">
+                            <label class="field-label required">Severity</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <div class="radio-button selected"></div>
+                                    <span class="radio-label">Severe</span>
+                                </div>
+                                <div class="radio-option">
+                                    <div class="radio-button"></div>
+                                    <span class="radio-label">Not Severe</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EpiPen field appears -->
+                        <div class="field" style="background: #fff3cd; padding: 16px; border-radius: 4px; margin-top: 20px;">
+                            <label class="field-label required">EpiPen Prescribed?</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <div class="radio-button"></div>
+                                    <span class="radio-label">Yes</span>
+                                </div>
+                                <div class="radio-option">
+                                    <div class="radio-button"></div>
+                                    <span class="radio-label">No</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Conditional Logic:</strong><br>
+                • When Severity = "Not Severe" → EpiPen field is HIDDEN<br>
+                • When Severity = "Severe" → EpiPen field APPEARS immediately (highlighted in yellow)<br>
+                • User must answer Yes/No before they can save
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; padding: 24px; background: #e8f5e9; border-left: 4px solid #4caf50; border-radius: 4px;">
+            <h3 style="margin-bottom: 12px; color: #2e7d32;">✓ Ready for Development</h3>
+            <p style="color: #1b5e20; line-height: 1.6;">
+                These mockups show the <strong>exact styling, spacing, and layout</strong> that will be implemented.<br><br>
+                <strong>All measurements:</strong> 58px input heights, 16px padding, 4px border radius, proper font sizes<br>
+                <strong>All colors:</strong> #000 black, #666 gray, #ccc borders, #dc3445 errors, #ff9800 warnings<br>
+                <strong>All safety fields:</strong> Category, Severity, and EpiPen are fully specified and styled
+            </p>
+        </div>
+    </div>
+</body>
+</html>

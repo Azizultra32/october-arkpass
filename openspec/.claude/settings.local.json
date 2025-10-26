@@ -1,15 +1,4 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(for file in /Users/ali/october-arkpass/*_SCREENS_SPECS.md)",
-      "Bash(done)",
-      "Read(//Users/ali/Downloads/ARKPASS 6/**)",
-      "Bash(head:*)",
-      "Bash(git add:*)"
-    ],
-    "deny": [],
-    "ask": []
-  },
   "autoApproveTools": true,
   "autoExecute": true,
   "skipConfirmations": true,
