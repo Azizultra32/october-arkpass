@@ -1,0 +1,127 @@
+{
+  "note": "MANUAL VERIFICATION REQUIRED - Anon key has limited access to information_schema",
+  "instructions": [
+    "1. Log in to Supabase Dashboard: https://app.supabase.com",
+    "2. Navigate to: Database → Tables",
+    "3. For each table below, verify existence and note columns",
+    "4. Update SCHEMA_VALIDATION_CHECKLIST.md with findings"
+  ],
+  "expectedTables": [
+    {
+      "tableName": "roles",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "user_profiles",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "medications",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "visit_notes",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "allergies",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "immunizations",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "conditions",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "surgeries",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "family_history",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "social_history",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "lab_results",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "documents",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "access_grants",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "proxy_access",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "audit_logs",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "notifications",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "appointments",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "data_exports",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    },
+    {
+      "tableName": "supplements",
+      "exists": null,
+      "columns": [],
+      "notes": ""
+    }
+  ],
+  "alternativeMethod": "Use Supabase CLI: `supabase db pull` to get schema",
+  "extractedAt": "2025-10-26T07:46:38.060Z"
+}

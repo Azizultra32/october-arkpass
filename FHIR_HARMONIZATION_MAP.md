@@ -1,8 +1,93 @@
 # FHIR Harmonization Mapping
 
-**Date**: 2025-10-25
-**Purpose**: Map Figma-extracted specifications to FHIR R4 resources and ARKPASS 6 Supabase schema
-**Status**: Phase 1 - Initial Mapping
+**Date**: 2025-10-26 (Updated)
+**Purpose**: Map Figma-extracted specifications to FHIR R4 resources and ArkPass Supabase schema
+**Status**: Phase 1 Complete - Production Schema Validated
+
+---
+
+## 🎯 Database Design Philosophy (CRITICAL)
+
+### Priority Order
+
+**1. ArkPass Schema (PRIMARY)**
+- Figma UI designs dictate database structure
+- Database optimized for ArkPass app functionality
+- Fields serve patient needs and app workflows FIRST
+
+**2. FHIR R4 Export (SECONDARY)**
+- FHIR is for interoperability and data exchange ONLY
+- FHIR mapping happens at **export time**, NOT database design time
+- Database is NOT constrained by FHIR limitations
+
+### Core Principle
+
+> **"We want compliance with FHIR but not limited to what the FHIR guys were thinking. Sometimes we may need to input the content under the comments for FHIR as it doesn't have the straight match."**
+>
+> — Project Directive
+
+### Implementation Rules
+
+✅ **DO**:
+- Add custom fields for ArkPass features (e.g., `requires_epipen`, folder structure)
+- Use ArkPass-specific categories (5 allergy categories vs. FHIR's 4)
+- Optimize schema for mobile app UX (quick add, field-level editing)
+- Create ArkPass-unique tables (supplements, document_folders, etc.)
+
+❌ **DON'T**:
+- Remove fields because FHIR doesn't have them
+- Change UI to fit FHIR constraints
+- Limit functionality to FHIR spec
+- Reject features that need custom FHIR extensions
+
+### When FHIR Doesn't Fit
+
+Use one of these strategies:
+
+**Strategy A: FHIR Custom Extension**
+```json
+{
+  "resourceType": "AllergyIntolerance",
+  "extension": [{
+    "url": "http://arkpass.com/fhir/StructureDefinition/requires-epipen",
+    "valueBoolean": true
+  }]
+}
+```
+
+**Strategy B: FHIR Comment/Note Field**
+```json
+{
+  "resourceType": "DocumentReference",
+  "note": [{
+    "text": "ArkPass folder: Prescriptions | Tags: Annual Checkup, Cardiac"
+  }]
+}
+```
+
+**Strategy C: Omit from FHIR Export**
+- Some internal fields don't need FHIR export
+- Example: `created_via` (quick_add vs add_with_details) → Internal audit only
+
+### Examples
+
+**Example 1: Allergy Categories**
+- **Figma**: 5 categories (Medication, Food, Environmental/Seasonal, Skin/Contact, Insect & Animal)
+- **FHIR**: 4 categories (medication, food, environment, biologic)
+- **ArkPass Database**: Uses 5 categories (Figma drives schema)
+- **FHIR Export**: Maps 5 → 4 at export time + custom extension for detail
+
+**Example 2: Document Folders**
+- **Figma**: 5 pre-defined folders (Prescriptions, Lab Results, Imaging, Consult, Other)
+- **FHIR**: No folder concept in DocumentReference
+- **ArkPass Database**: `document_folders` table with 5 system folders
+- **FHIR Export**: Use custom extension or include folder name in note
+
+**Example 3: EpiPen Flag**
+- **Figma**: "Requires EpiPen" toggle (patient safety)
+- **FHIR**: No native field for EpiPen
+- **ArkPass Database**: `requires_epipen BOOLEAN` column
+- **FHIR Export**: Custom extension (strategy A above)
 
 ---
 
@@ -10,14 +95,14 @@
 
 This document provides the critical bridge between:
 1. **Figma UI Extraction** (27 specification files, 75 screens)
-2. **ARKPASS 6 FHIR-Based Supabase Schema** (harmonized_schema.sql)
-3. **FHIR R4 Standard** (HL7 FHIR specification)
+2. **ArkPass Production Supabase Database** (actual production state documented)
+3. **FHIR R4 Standard** (HL7 FHIR specification for export/interoperability)
 
 ### Harmonization Goals
 
-- ✅ Preserve all Figma UI features and workflows
-- ✅ Align with existing FHIR-based Supabase schema
-- ✅ Ensure FHIR R4 compliance for interoperability
+- ✅ **PRIMARY**: Preserve all Figma UI features and workflows
+- ✅ **PRIMARY**: Optimize database for ArkPass app functionality
+- ✅ **SECONDARY**: Enable FHIR export for interoperability
 - ✅ Identify schema gaps and extensions needed
 - ✅ Document field-level mappings for implementation
 

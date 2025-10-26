@@ -1,0 +1,136 @@
+{
+  "probedAt": "2025-10-26T07:59:37.092Z",
+  "supabaseUrl": "https://gqahazcatpgzzfujnidk.supabase.co",
+  "method": "Direct table query with anon key",
+  "results": [
+    {
+      "tableName": "roles",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "user_profiles",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "medications",
+      "exists": true,
+      "accessible": true,
+      "rowCount": 1,
+      "sampleColumns": [
+        "id",
+        "patient_id",
+        "date",
+        "medication",
+        "dosage"
+      ],
+      "note": "Columns extracted from sample row"
+    },
+    {
+      "tableName": "visit_notes",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "allergies",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "immunizations",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "conditions",
+      "exists": true,
+      "accessible": true,
+      "rowCount": 3,
+      "sampleColumns": [
+        "id",
+        "patient_id",
+        "date",
+        "condition"
+      ],
+      "note": "Columns extracted from sample row"
+    },
+    {
+      "tableName": "surgeries",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "family_history",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "social_history",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "lab_results",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "documents",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "access_grants",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "proxy_access",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "audit_logs",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "notifications",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "appointments",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "data_exports",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    },
+    {
+      "tableName": "supplements",
+      "exists": false,
+      "error": "Table does not exist",
+      "errorCode": "42P01"
+    }
+  ]
+}
