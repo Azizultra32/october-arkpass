@@ -352,16 +352,20 @@ SELECT tablename, rowsecurity FROM pg_tables WHERE schemaname = 'public';
 ### Q1: Medications Frequency Dropdown Options
 **Question**: What are ALL the frequency options for medications?
 
-**Current Status**: Spec assumes: "1 time a day", "2 times a day", "3 times a day", "4 times a day", "As needed"
+**Answer**: ✅ **DOCUMENTED** in [MEDICATIONS_DROPDOWN_OPTIONS.md](../../../MEDICATIONS_DROPDOWN_OPTIONS.md)
 
-**Options**:
-- A) Fixed list (1x, 2x, 3x, 4x, PRN)
-- B) Extended list (every X hours, specific schedules)
-- C) Free-text input
+**Options (9 total)**:
+- 1 time a day (Once daily)
+- 2 times a day (Twice daily - BID)
+- 3 times a day (Three times daily - TID)
+- 4 times a day (Four times daily - QID)
+- Every 6 hours (q6h)
+- Every 8 hours (q8h)
+- 1 time per week (Once weekly)
+- As needed (PRN)
+- Other... (Free-text capture)
 
-**Recommendation**: Start with **Option A** (MVP), add Option B if users request it
-
-**Decision Needed**: Confirm with product team / review Figma prototypes
+**Status**: ANSWERED - Use documented options from MEDICATIONS_DROPDOWN_OPTIONS.md
 
 ---
 
@@ -427,19 +431,17 @@ SELECT tablename, rowsecurity FROM pg_tables WHERE schemaname = 'public';
 ---
 
 ### Q6: Personal Information Red Dot Indicators
-**Question**: What triggers red dot on field labels (incomplete, invalid, unverified)?
+**Question**: What triggers red dot on field labels?
 
-**Current Status**: Figma shows red dots on some fields, logic unclear
+**Answer**: ✅ **CONFIRMED** - Red dot appears when the item details are **not completed** (incomplete record)
 
-**Options**:
-- A) Incomplete (field is null/empty)
-- B) Invalid (failed validation, e.g., invalid email)
-- C) Unverified (email not verified, phone not verified)
-- D) Required but missing
+**Implementation**:
+- Red dot = field has missing required sub-fields or incomplete data
+- Applies across all features (not just Personal Information)
+- Example: Medication with name only (no dosage/frequency) shows red dot
+- Example: Personal info field with partial data shows red dot
 
-**Recommendation**: Use **Option C** for email/phone (unverified), **Option D** for others (required but missing)
-
-**Decision Needed**: Confirm with design team
+**Status**: ANSWERED - Simple incomplete indicator, no complex logic needed
 
 ---
 
