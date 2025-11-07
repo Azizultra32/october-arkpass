@@ -27,6 +27,11 @@ import { EditDrugs } from './features/social-history/EditDrugs'
 import { EditCaffeine } from './features/social-history/EditCaffeine'
 import { EditLiving } from './features/social-history/EditLiving'
 import { EditOccupation } from './features/social-history/EditOccupation'
+import { PersonalInformationMain } from './features/personal-information/PersonalInformationMain'
+import { EditName } from './features/personal-information/EditName'
+import { EditBasicField } from './features/personal-information/EditBasicField'
+import { EditHeightWeight } from './features/personal-information/EditHeightWeight'
+import { EditComplex } from './features/personal-information/EditComplex'
 
 function App() {
   return (
@@ -77,6 +82,15 @@ function App() {
         <Route path="social-history/caffeine" element={<EditCaffeine />} />
         <Route path="social-history/living" element={<EditLiving />} />
         <Route path="social-history/occupation" element={<EditOccupation />} />
+
+        {/* Personal Information */}
+        <Route path="personal-information" element={<PersonalInformationMain />} />
+        <Route path="personal-information/name" element={<EditName />} />
+        <Route path="personal-information/:field" element={<EditBasicField />} />
+        <Route path="personal-information/height-weight" element={<EditHeightWeight />} />
+        <Route path="personal-information/insurance" element={<EditComplex />} />
+        <Route path="personal-information/doctor" element={<EditComplex />} />
+        <Route path="personal-information/emergency" element={<EditComplex />} />
 
         {/* TODO: Add remaining feature routes */}
       </Routes>
