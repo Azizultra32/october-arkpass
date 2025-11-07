@@ -14,6 +14,9 @@ import { ViewImmunization } from './features/immunizations/ViewImmunization'
 import { SurgeriesList } from './features/surgeries/SurgeriesList'
 import { AddSurgery } from './features/surgeries/AddSurgery'
 import { ViewSurgery } from './features/surgeries/ViewSurgery'
+import { SupplementsList } from './features/supplements/SupplementsList'
+import { AddSupplement } from './features/supplements/AddSupplement'
+import { ViewSupplement } from './features/supplements/ViewSupplement'
 
 function App() {
   return (
@@ -45,6 +48,11 @@ function App() {
         <Route path="surgeries" element={<SurgeriesList />} />
         <Route path="surgeries/add" element={<AddSurgery />} />
         <Route path="surgeries/:id" element={<ViewSurgery />} />
+
+        {/* Supplements */}
+        <Route path="supplements" element={<SupplementsList />} />
+        <Route path="supplements/add" element={<AddSupplement />} />
+        <Route path="supplements/:id" element={<ViewSupplement />} />
 
         {/* TODO: Add remaining feature routes */}
       </Routes>
