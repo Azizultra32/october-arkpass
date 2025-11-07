@@ -32,6 +32,9 @@ import { EditName } from './features/personal-information/EditName'
 import { EditBasicField } from './features/personal-information/EditBasicField'
 import { EditHeightWeight } from './features/personal-information/EditHeightWeight'
 import { EditComplex } from './features/personal-information/EditComplex'
+import { DocumentsList } from './features/documents/DocumentsList'
+import { AddDocument } from './features/documents/AddDocument'
+import { ViewDocument } from './features/documents/ViewDocument'
 
 function App() {
   return (
@@ -92,7 +95,11 @@ function App() {
         <Route path="personal-information/doctor" element={<EditComplex />} />
         <Route path="personal-information/emergency" element={<EditComplex />} />
 
-        {/* TODO: Add remaining feature routes */}
+        {/* Documents */}
+        <Route path="documents" element={<DocumentsList />} />
+        <Route path="documents/add" element={<AddDocument />} />
+        <Route path="documents/:id" element={<ViewDocument />} />
+
       </Routes>
     </BrowserRouter>
   )
