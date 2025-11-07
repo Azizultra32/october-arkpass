@@ -8,6 +8,9 @@ import { ViewAllergy } from './features/allergies/ViewAllergy'
 import { ConditionsList } from './features/conditions/ConditionsList'
 import { AddCondition } from './features/conditions/AddCondition'
 import { ViewCondition } from './features/conditions/ViewCondition'
+import { ImmunizationsList } from './features/immunizations/ImmunizationsList'
+import { AddImmunization } from './features/immunizations/AddImmunization'
+import { ViewImmunization } from './features/immunizations/ViewImmunization'
 
 function App() {
   return (
@@ -29,6 +32,11 @@ function App() {
         <Route path="conditions" element={<ConditionsList />} />
         <Route path="conditions/add" element={<AddCondition />} />
         <Route path="conditions/:id" element={<ViewCondition />} />
+
+        {/* Immunizations */}
+        <Route path="immunizations" element={<ImmunizationsList />} />
+        <Route path="immunizations/add" element={<AddImmunization />} />
+        <Route path="immunizations/:id" element={<ViewImmunization />} />
 
         {/* TODO: Add remaining feature routes */}
       </Routes>
