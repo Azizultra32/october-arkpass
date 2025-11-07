@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
+import { BottomNav } from '../../components/BottomNav'
 
 interface Condition {
   id: string
@@ -188,7 +189,7 @@ export function ConditionsList() {
       </div>
 
       {/* Bottom navigation bar - 58px height */}
-      <div className="h-[58px] border-t border-black bg-white"></div>
+      <BottomNav />
     </div>
   )
 }

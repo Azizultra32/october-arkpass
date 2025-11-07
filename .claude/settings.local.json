@@ -14,7 +14,10 @@
       "Bash(supabase db dump:*)",
       "Bash(supabase db remote exec:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(psql:*)",
+      "Bash(for file in medications/MedicationsList.tsx allergies/AllergiesList.tsx conditions/ConditionsList.tsx immunizations/ImmunizationsList.tsx surgeries/SurgeriesList.tsx supplements/SupplementsList.tsx family-history/FamilyHistoryList.tsx social-history/SocialHistoryMain.tsx personal-information/PersonalInformationMain.tsx documents/DocumentsList.tsx)",
+      "Bash(do)"
     ],
     "deny": [],
     "ask": []

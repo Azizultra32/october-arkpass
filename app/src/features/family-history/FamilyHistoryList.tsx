@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
+import { BottomNav } from '../../components/BottomNav'
 
 interface FamilyMember {
   id: string
@@ -104,7 +105,7 @@ export function FamilyHistoryList() {
       </div>
 
       {/* Bottom navigation bar */}
-      <div className="h-[58px] border-t border-black bg-white"></div>
+      <BottomNav />
     </div>
   )
 }
