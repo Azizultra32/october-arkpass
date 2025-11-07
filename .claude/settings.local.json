@@ -1,10 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "Bash(for file in /Users/ali/october-arkpass/*_SCREENS_SPECS.md)",
       "Bash(done)",
-      "Read(//Users/ali/Downloads/ARKPASS 6/**)",
-      "Bash(head:*)",
+      "Bash(echo:*)",
+      "Bash(awk:*)",
+      "Bash(expr:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss init -p)",
+      "Bash(npm run dev:*)",
+      "Bash(supabase link:*)",
+      "Bash(supabase db dump:*)",
+      "Bash(supabase db remote exec:*)",
       "Bash(git add:*)"
     ],
     "deny": [],
