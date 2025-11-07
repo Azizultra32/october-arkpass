@@ -17,6 +17,9 @@ import { ViewSurgery } from './features/surgeries/ViewSurgery'
 import { SupplementsList } from './features/supplements/SupplementsList'
 import { AddSupplement } from './features/supplements/AddSupplement'
 import { ViewSupplement } from './features/supplements/ViewSupplement'
+import { FamilyHistoryList } from './features/family-history/FamilyHistoryList'
+import { AddFamilyMember } from './features/family-history/AddFamilyMember'
+import { EditFamilyMember } from './features/family-history/EditFamilyMember'
 
 function App() {
   return (
@@ -53,6 +56,11 @@ function App() {
         <Route path="supplements" element={<SupplementsList />} />
         <Route path="supplements/add" element={<AddSupplement />} />
         <Route path="supplements/:id" element={<ViewSupplement />} />
+
+        {/* Family History */}
+        <Route path="family-history" element={<FamilyHistoryList />} />
+        <Route path="family-history/add" element={<AddFamilyMember />} />
+        <Route path="family-history/:id/edit" element={<EditFamilyMember />} />
 
         {/* TODO: Add remaining feature routes */}
       </Routes>
