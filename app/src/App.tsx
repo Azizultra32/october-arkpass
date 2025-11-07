@@ -20,6 +20,13 @@ import { ViewSupplement } from './features/supplements/ViewSupplement'
 import { FamilyHistoryList } from './features/family-history/FamilyHistoryList'
 import { AddFamilyMember } from './features/family-history/AddFamilyMember'
 import { EditFamilyMember } from './features/family-history/EditFamilyMember'
+import { SocialHistoryMain } from './features/social-history/SocialHistoryMain'
+import { EditSmoking } from './features/social-history/EditSmoking'
+import { EditAlcohol } from './features/social-history/EditAlcohol'
+import { EditDrugs } from './features/social-history/EditDrugs'
+import { EditCaffeine } from './features/social-history/EditCaffeine'
+import { EditLiving } from './features/social-history/EditLiving'
+import { EditOccupation } from './features/social-history/EditOccupation'
 
 function App() {
   return (
@@ -61,6 +68,15 @@ function App() {
         <Route path="family-history" element={<FamilyHistoryList />} />
         <Route path="family-history/add" element={<AddFamilyMember />} />
         <Route path="family-history/:id/edit" element={<EditFamilyMember />} />
+
+        {/* Social History */}
+        <Route path="social-history" element={<SocialHistoryMain />} />
+        <Route path="social-history/smoking" element={<EditSmoking />} />
+        <Route path="social-history/alcohol" element={<EditAlcohol />} />
+        <Route path="social-history/drugs" element={<EditDrugs />} />
+        <Route path="social-history/caffeine" element={<EditCaffeine />} />
+        <Route path="social-history/living" element={<EditLiving />} />
+        <Route path="social-history/occupation" element={<EditOccupation />} />
 
         {/* TODO: Add remaining feature routes */}
       </Routes>
