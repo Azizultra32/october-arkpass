@@ -64,10 +64,50 @@
 - **Config**: `~/.claude.json` → byterover-mcp HTTP transport
 - **Next**: Initialize ByteRover context delivery at next session start
 
-### Mission Delta — ArkPass Dev Tenet Prime Constitution
-- **Status**: v2.0.0 COMPLETE ✅
+### Mission Echo — Constitutional Improvement (Constitution Keeper)
+- **Status**: ACTIVE ONGOING 🔄
 - **Door**: Door-01 (october-arkpass)
-- **Enhancements**:
+- **Assignment**: DEDICATED FULL-TIME ROLE (always on duty)
+- **Mission**:
+  - Monitor all sessions for constitutional friction points
+  - Draft Constitutional Improvement Proposals (CIPs) with 3 options
+  - Consult Grandmaster Ali on all amendments
+  - Maintain constitutional coherence as project scales
+  - Weekly Constitutional Health Reports to Ali
+- **Authority**: Can draft amendments autonomously, MUST get Ali approval before merge
+- **NOT counted in Librarian ratio** — Special oversight role
+- **Deliverables**:
+  - CIPs drafted with Problem Statement + 3 Options + Impact Analysis
+  - Constitutional amendments (version-bumped after Ali approval)
+  - Constitution FAQ, quick-reference guides, onboarding docs
+  - Weekly health reports tracking compliance metrics
+- **Performance Target**: >80% CIP approval rate, <2 major amendments/month
+- **Next**: Appoint Constitution Keeper agent to begin monitoring
+
+### Mission Foxtrot — UI/UX Excellence via The Twins
+- **Status**: ACTIVE ONGOING 🔄
+- **Door**: Door-01 (october-arkpass)
+- **Assignment**: DEDICATED FULL-TIME PAIR (Twin A + Twin B, always on duty)
+- **The Twin Development Cycle**:
+  - **Phase 1 (Joint)**: Analyze UI/UX flaws together, create priority matrix, select improvement target
+  - **Phase 2 (Split)**: Twin A builds Version A, Twin B builds Version B (NO COMMUNICATION)
+  - **Phase 3 (Reunite)**: Present both versions at Tea Ceremony → Ali issues decree → Twins implement unified version
+- **Authority**: Can analyze flaws and build prototypes autonomously, MUST present to Ali at Tea Ceremony before merging
+- **NOT counted in Librarian ratio** — Special design/quality role
+- **Deliverables**:
+  - Joint UI/UX Flaw Analysis Reports (Critical/High/Medium/Low priority matrix)
+  - Version A & Version B competing implementations (separate feature branches)
+  - Tea Ceremony Minutes documenting Ali's decree
+  - Unified implementation merging winning elements
+- **Branch Naming**: `twin-a/[issue]`, `twin-b/[issue]`, `twins-unified/[issue]`
+- **Performance Target**: 5+ flaws per analysis, 90%+ user satisfaction post-fix, <2hr Tea Ceremony, <3 days unified implementation
+- **Special Powers**: Emergency UI hotfix for critical visual disasters (retrospective Tea Ceremony after)
+- **Next**: Appoint Twin A and Twin B agents to begin UI/UX audit
+
+### Mission Delta — ArkPass Dev Tenet Prime Constitution
+- **Status**: v2.0.0 COMPLETE ✅ | v2.1.0 IN PROGRESS (Constitution Keeper role addition)
+- **Door**: Door-01 (october-arkpass)
+- **Enhancements (v2.0.0)**:
   - Mission Control (ID 48707) integration
   - Decision Authority Matrix (25+ decision types)
   - Source Tracking Protocol (Door numbering + mandatory stamps)
@@ -75,8 +115,14 @@
   - Clock-in/Clock-out procedures
   - Context Window Checkpoints (50%/75%/90%)
   - Field Communications protocol
-- **Commits**: 463e3c5, b9dff8e, b52ef23, 4e70e64, 8ecf5da
-- **Next**: Enforce in all future sessions
+- **Latest Addition (v2.1.0)**:
+  - **Constitutional Improvement Agent (Constitution Keeper)** — DEDICATED FULL-TIME ROLE
+  - Monitors constitutional effectiveness, drafts amendments, consults Grandmaster Ali
+  - NOT counted in Librarian ratio
+  - CIP (Constitutional Improvement Proposal) template + workflow
+  - Weekly Constitutional Health Reports to Ali
+- **Commits**: 463e3c5, b9dff8e, b52ef23, 4e70e64, 8ecf5da (v2.0.0)
+- **Next**: Version bump to v2.1.0 after commit; Appoint Constitution Keeper agent
 
 ---
 
