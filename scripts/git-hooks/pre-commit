@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+#
+# Constitutional Protection Pre-Commit Hook
+# Prevents unauthorized amendments to ARKPASS_DEV_TENET_PRIME.md
+#
+
+set -euo pipefail
+
+PROTECTED_FILE="ARKPASS_DEV_TENET_PRIME.md"
+
+# Check if protected file is being modified
+if git diff --cached --name-only | grep -q "^${PROTECTED_FILE}$"; then
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "⚠️  CONSTITUTIONAL AMENDMENT DETECTED"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+    echo "File: $PROTECTED_FILE"
+    echo ""
+    echo "Constitutional amendments require:"
+    echo "  1. Constitutional Improvement Proposal (CIP)"
+    echo "  2. The Consigliere review"
+    echo "  3. Grandmaster Ali explicit approval"
+    echo ""
+    echo "To proceed, you must either:"
+    echo "  A) Have Royal Decree authorization"
+    echo "  B) Skip this hook with: git commit --no-verify"
+    echo ""
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+    # Prompt for authorization
+    read -p "Do you have Royal Decree authorization? (yes/no): " response
+
+    if [[ "$response" != "yes" ]]; then
+        echo ""
+        echo "❌ Commit BLOCKED - No authorization"
+        echo ""
+        echo "Next steps:"
+        echo "  1. Review changes: git diff --cached $PROTECTED_FILE"
+        echo "  2. File CIP with Constitution Keeper"
+        echo "  3. Route through The Consigliere"
+        echo "  4. Obtain Grandmaster Ali decree"
+        echo ""
+        exit 1
+    fi
+
+    echo ""
+    echo "✅ Authorization confirmed - Proceeding with commit"
+    echo ""
+fi
+
+exit 0
