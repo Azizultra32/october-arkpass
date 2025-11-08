@@ -277,6 +277,152 @@
 - If starting implementation, begin with INVIC schema inspection
 - Update this log with your session
 
+#### 2025-11-08 06:45 AM - Agent Claude (Session 2)
+**Action**: CLOCK IN
+**Repository**: october-arkpass
+**Branch**: main
+**Task**: Review downloaded armada-arkpass codebase, identify missing dashboard/navigation components, clarify implementation gaps
+
+**Analysis Completed**:
+- Reviewed `/Users/ali/Downloads/armada-arkpass (5)/src` codebase
+- Identified existing dashboard components: Dashboard.tsx, EnhancedDashboard.tsx, RecordsList.tsx, Navbar.tsx, SharedCard components
+- Compared with current `october-arkpass/app/src` implementation
+- Confirmed current app routes directly to `/medications` with no dashboard/home screen
+
+**Key Findings**:
+1. **Downloaded version HAS**:
+   - Dashboard with welcome banner, profile photo, quick stats (conditions: 4, medications: 5, visits: 3, documents: 12)
+   - RecordsList component showing grid of health record cards
+   - Bottom navigation (mobile: 3 icons, desktop: 5-item sidebar)
+   - SharedCard components for access code management
+   - Layout wrappers (Layout, LayoutNoMidbar, LayoutDoctors)
+   - VisitNotes, DashboardWelcome, Logo components
+
+2. **Current october-arkpass app MISSING**:
+   - Dashboard screen (no home page)
+   - Bottom navigation bar
+   - Access code/sharing features
+   - Layout wrappers
+   - All navigation infrastructure
+
+3. **What IS built in current app**:
+   - All 10 PHR feature list screens (medications, allergies, conditions, surgeries, immunizations, supplements, family-history, social-history, personal-information, documents)
+   - Add screens for each feature
+   - View screens for each feature
+   - Routes configured but no navigation UI
+
+**User Questions Answered**:
+- Navigation bar colors: White background (#FFFFFF), black icons (#000000), black top border (1px)
+- Sharing workflow: Color-coded cards - Yellow (active #FFFCBA), Orange (unused #FBBC05), Gray (pending #EEEEEE), White (expired)
+- Access codes: 5-digit codes with time expiry (48h/1week/1month/custom)
+
+**Status**: IN PROGRESS
+**Notes**:
+- User confirmed downloaded armada-arkpass has components we need
+- All 10 PHR features built but no way to navigate between them
+- Dashboard spec exists (DASHBOARD_NAVIGATION_SCREENS_SPECS.md) but not implemented
+- Ready to implement dashboard + bottom nav OR port from downloaded version
+
+**Next Action Options**:
+1. Port dashboard components from downloaded armada-arkpass to current app
+2. Build dashboard fresh from DASHBOARD_NAVIGATION_SCREENS_SPECS.md
+3. Hybrid: Use downloaded as reference, build to match current app architecture
+
+**Awaiting**: User decision on implementation approach
+
+#### 2025-11-08 07:15 AM - Agent Claude (Session 2 - Continued)
+**Action**: UPDATE
+**Task**: Add Decision Authority Matrix to ARKPASS_DEV_TENET_PRIME.md
+
+**Enhancement Added**:
+- Created comprehensive Decision Authority Matrix section
+- Categorized 25+ decision types into 5 categories:
+  - Schema & Database (5 decisions)
+  - Frontend Implementation (5 decisions)
+  - Code Quality (4 decisions)
+  - Documentation (4 decisions)
+  - Git Operations (4 decisions)
+  - Testing & Validation (3 decisions)
+
+**Matrix Legend**:
+- ✅ Yes: Agent can proceed autonomously
+- 🚨 ASK USER FIRST: Requires explicit approval
+- 🚨 WAIT FOR USER: User will provide requirements
+- 🚨 NEVER: Forbidden operations
+
+**Key Rules Established**:
+- Port components from downloaded repos → ASK USER FIRST
+- Production migrations → ASK USER FIRST
+- Home screen redesign → WAIT FOR USER
+- Force push to main → NEVER (forbidden)
+- Update ARKPASS_DEV_TENET_PRIME.md → MANDATORY with every session
+
+**"When In Doubt" Decision Tree Added**:
+- Affects UX → ASK USER
+- Changes architecture → ASK USER
+- Reversible via git → Probably OK
+- Follows existing patterns → Probably OK
+- Still unsure → ASK USER
+
+**Files Modified**:
+- `ARKPASS_DEV_TENET_PRIME.md` (added 52 lines)
+
+**Status**: READY FOR COMMIT
+
+---
+
+## 🔐 Decision Authority Matrix
+
+**Purpose**: Clarify which decisions agents can make autonomously vs which require explicit user approval.
+
+| Decision Type | Can Agent Decide? | Requires User Approval? | Notes |
+|---------------|-------------------|------------------------|-------|
+| **Schema & Database** |
+| Add/rename database fields (following conventions) | ✅ Yes | ❌ No | Must document rationale in commit |
+| Change database architecture (RLS, soft delete, etc.) | 🚨 **ASK USER FIRST** | ✅ YES | Major architectural changes only |
+| Run dev/staging migrations | ✅ Yes | ❌ No | Test environment only |
+| Run production migrations | 🚨 **ASK USER FIRST** | ✅ YES | Production changes require approval |
+| Create new OpenSpec proposals | ✅ Yes | ❌ No | Document decision rationale |
+| **Frontend Implementation** |
+| Build components from existing specs | ✅ Yes | ❌ No | Follow DASHBOARD_NAVIGATION_SCREENS_SPECS.md |
+| Port components from downloaded repos | 🚨 **ASK USER FIRST** | ✅ YES | User must approve which repo/approach |
+| Change navigation structure | 🚨 **ASK USER FIRST** | ✅ YES | Affects user experience |
+| Fix styling bugs (alignment, colors, spacing) | ✅ Yes | ❌ No | Match Figma specs exactly |
+| Home screen redesign | 🚨 **WAIT FOR USER** | ✅ YES | User indicated possible redesign |
+| **Code Quality** |
+| Fix bugs in existing code | ✅ Yes | ❌ No | Document what was broken and how fixed |
+| Refactor for performance/readability | ✅ Yes | ❌ No | Don't change external behavior |
+| Add TypeScript types | ✅ Yes | ❌ No | Follow project conventions |
+| Update dependencies | 🚨 **ASK USER FIRST** | ✅ YES | May introduce breaking changes |
+| **Documentation** |
+| Extract missing Figma screens | ✅ Yes | ❌ No | Follow existing spec format |
+| Update ARKPASS_DEV_TENET_PRIME.md | ✅ Yes (MANDATORY) | ❌ No | Must update with every session |
+| Create new architecture docs | ✅ Yes | ❌ No | Document decision rationale |
+| Update existing specs | ✅ Yes | ❌ No | Keep specs in sync with implementation |
+| **Git Operations** |
+| Commit completed work | ✅ Yes | ❌ No | Follow commit message format |
+| Push to main branch | ✅ Yes | ❌ No | Always push after session |
+| Create feature branches | ✅ Yes | ❌ No | For experimental work |
+| Force push to main | 🚨 **NEVER** | ❌ FORBIDDEN | Destructive operation |
+| **Testing & Validation** |
+| Run test migrations in dev | ✅ Yes | ❌ No | Always test before production |
+| Validate schema with EXTRACT_SCHEMA.sql | ✅ Yes | ❌ No | Recommended before implementation |
+| Test date functions with sample data | ✅ Yes | ❌ No | Validate dual-mode date system |
+
+### Legend
+- ✅ **Yes**: Agent can proceed autonomously
+- 🚨 **ASK USER FIRST**: Stop and ask for explicit approval before proceeding
+- 🚨 **WAIT FOR USER**: Do not proceed, user will provide requirements
+- 🚨 **NEVER**: Forbidden, will cause problems
+
+### When In Doubt
+**If you're unsure whether a decision requires approval:**
+1. Check if it affects user experience (UX) → ASK USER
+2. Check if it changes architecture → ASK USER
+3. Check if it's reversible via git → Probably OK to proceed
+4. Check if it follows existing patterns → Probably OK to proceed
+5. Still unsure? → ASK USER (better safe than sorry)
+
 ---
 
 ## 📋 Quick Reference: File Organization
