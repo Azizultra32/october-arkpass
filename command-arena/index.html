@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArkPass Command Arena | Mission Control 48707</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      font-family: 'Courier New', monospace;
+      color: #0f0;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    #arena {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: radial-gradient(circle at center, #001a00 0%, #000 100%);
+    }
+
+    /* Title Bar */
+    #title-bar {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 100;
+    }
+
+    #title-bar h1 {
+      font-size: 2.5rem;
+      color: #00ff00;
+      text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+      letter-spacing: 4px;
+      animation: glow-pulse 2s ease-in-out infinite;
+    }
+
+    #title-bar .subtitle {
+      font-size: 1rem;
+      color: #00cc00;
+      margin-top: 5px;
+      letter-spacing: 2px;
+    }
+
+    /* Canvas for cables */
+    #cables-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Nodes */
+    .node {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 3px solid;
+      box-shadow: 0 0 20px currentColor, 0 0 40px currentColor, inset 0 0 20px currentColor;
+      z-index: 10;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .node:hover {
+      transform: scale(1.15);
+    }
+
+    .node-label {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px currentColor;
+      margin-bottom: 5px;
+    }
+
+    .node-status {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    /* Prime Node (Top) */
+    #prime-node {
+      width: 180px;
+      height: 180px;
+      top: 150px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(255, 0, 0, 0.2), transparent);
+      border-color: #ff0000;
+      color: #ff0000;
+      animation: breathe 3s ease-in-out infinite, rotate-slow 20s linear infinite;
+    }
+
+    /* Librarian Nodes (Middle Row) */
+    .librarian-node {
+      width: 140px;
+      height: 140px;
+      top: 400px;
+      background: radial-gradient(circle, rgba(0, 150, 255, 0.2), transparent);
+      border-color: #0096ff;
+      color: #0096ff;
+      animation: breathe 3s ease-in-out infinite 0.5s;
+    }
+
+    #librarian-1 { left: 20%; transform: translateX(-50%); }
+    #librarian-2 { left: 50%; transform: translateX(-50%); }
+    #librarian-3 { left: 80%; transform: translateX(-50%); }
+
+    /* Builder Nodes (Bottom) */
+    .builder-node {
+      width: 100px;
+      height: 100px;
+      top: 650px;
+      background: radial-gradient(circle, rgba(0, 255, 0, 0.2), transparent);
+      border-color: #00ff00;
+      color: #00ff00;
+      animation: breathe 3s ease-in-out infinite 1s;
+    }
+
+    #builder-1 { left: 30%; transform: translateX(-50%); }
+    #builder-2 { left: 50%; transform: translateX(-50%); }
+    #builder-3 { left: 70%; transform: translateX(-50%); }
+
+    /* Flash Message Banner */
+    #flash-banner {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      max-width: 900px;
+      background: rgba(255, 0, 0, 0.2);
+      border: 2px solid #ff0000;
+      border-radius: 10px;
+      padding: 15px 25px;
+      z-index: 100;
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+      animation: flash-pulse 1.5s ease-in-out infinite;
+      display: none;
+    }
+
+    #flash-banner.active {
+      display: block;
+    }
+
+    #flash-banner .flash-title {
+      font-size: 1.1rem;
+      color: #ff0000;
+      font-weight: bold;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    #flash-banner .flash-content {
+      font-size: 0.9rem;
+      color: #ffcccc;
+      line-height: 1.4;
+    }
+
+    /* Status HUD */
+    #status-hud {
+      position: absolute;
+      top: 120px;
+      right: 30px;
+      background: rgba(0, 255, 0, 0.1);
+      border: 2px solid #00ff00;
+      border-radius: 8px;
+      padding: 15px;
+      z-index: 100;
+      min-width: 250px;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    }
+
+    #status-hud .hud-title {
+      font-size: 1rem;
+      color: #00ff00;
+      font-weight: bold;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #00ff00;
+      padding-bottom: 5px;
+    }
+
+    #status-hud .hud-item {
+      font-size: 0.85rem;
+      color: #00cc00;
+      margin: 5px 0;
+    }
+
+    /* Animations */
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.08); opacity: 0.85; }
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00; }
+      50% { text-shadow: 0 0 30px #00ff00, 0 0 60px #00ff00, 0 0 80px #00ff00; }
+    }
+
+    @keyframes flash-pulse {
+      0%, 100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.8); }
+      50% { box-shadow: 0 0 50px rgba(255, 0, 0, 1), 0 0 70px rgba(255, 0, 0, 0.6); }
+    }
+
+    @keyframes rotate-slow {
+      from { transform: translateX(-50%) rotate(0deg); }
+      to { transform: translateX(-50%) rotate(360deg); }
+    }
+
+    /* Door Cards */
+    .door-card {
+      position: absolute;
+      bottom: 150px;
+      width: 100px;
+      height: 80px;
+      background: rgba(255, 255, 0, 0.1);
+      border: 2px solid #ffff00;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffff00;
+      font-size: 0.75rem;
+      box-shadow: 0 0 15px rgba(255, 255, 0, 0.4);
+      z-index: 5;
+    }
+
+    #door-1 { left: 15%; }
+    #door-2 { left: 30%; }
+  </style>
+</head>
+<body>
+  <div id="arena">
+    <!-- Title Bar -->
+    <div id="title-bar">
+      <h1>COMMAND ARENA</h1>
+      <div class="subtitle">MISSION CONTROL 48707 | MAJESTIC CLEARANCE</div>
+    </div>
+
+    <!-- Canvas for neon cables -->
+    <canvas id="cables-canvas"></canvas>
+
+    <!-- Prime Node (Supervisor) -->
+    <div id="prime-node" class="node">
+      <div class="node-label">PRIME</div>
+      <div class="node-status" id="prime-status">TBD</div>
+    </div>
+
+    <!-- Librarian Nodes -->
+    <div id="librarian-1" class="node librarian-node">
+      <div class="node-label">LIB-1</div>
+      <div class="node-status">Unassigned</div>
+    </div>
+    <div id="librarian-2" class="node librarian-node">
+      <div class="node-label">LIB-2</div>
+      <div class="node-status">Unassigned</div>
+    </div>
+    <div id="librarian-3" class="node librarian-node">
+      <div class="node-label">LIB-3</div>
+      <div class="node-status">Unassigned</div>
+    </div>
+
+    <!-- Builder Nodes -->
+    <div id="builder-1" class="node builder-node">
+      <div class="node-label">BUILD-1</div>
+      <div class="node-status">Active</div>
+    </div>
+    <div id="builder-2" class="node builder-node">
+      <div class="node-label">BUILD-2</div>
+      <div class="node-status">Idle</div>
+    </div>
+    <div id="builder-3" class="node builder-node">
+      <div class="node-label">BUILD-3</div>
+      <div class="node-status">Idle</div>
+    </div>
+
+    <!-- Door Cards -->
+    <div id="door-1" class="door-card">
+      <div>Door-01</div>
+      <div style="font-size: 0.6rem; margin-top: 3px;">october-arkpass</div>
+    </div>
+    <div id="door-2" class="door-card">
+      <div>Door-02</div>
+      <div style="font-size: 0.6rem; margin-top: 3px;">armada-arkpass</div>
+    </div>
+
+    <!-- Flash Message Banner -->
+    <div id="flash-banner">
+      <div class="flash-title">⚠️ EMERGENCY BROADCAST</div>
+      <div class="flash-content" id="flash-content">
+        Waiting for flash messages...
+      </div>
+    </div>
+
+    <!-- Status HUD -->
+    <div id="status-hud">
+      <div class="hud-title">MISSION STATUS</div>
+      <div class="hud-item">MC Status: <span id="mc-status">Loading...</span></div>
+      <div class="hud-item">Active Missions: <span id="mission-count">0</span></div>
+      <div class="hud-item">Sessions Today: <span id="session-count">0</span></div>
+      <div class="hud-item">Last Update: <span id="last-update">Never</span></div>
+    </div>
+  </div>
+
+  <script src="arena.js"></script>
+</body>
+</html>
