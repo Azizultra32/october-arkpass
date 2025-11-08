@@ -47,11 +47,13 @@
 - **Layer 1 — `CURRENT_STATUS.md`**: 150-line snapshot of the mission. Read-first, update-last.
 - **Layer 2 — `logs/YYYY-MM-DD.md`**: Daily session ledger with fixed template and checkpoint summaries.
 - **Layer 3 — Deep Archive**: Tenet Prime appendices, specs, legacy repos, Figma extracts. Librarians decide what surfaces upward.
+- **Token Estimation Guidance**: Treat ~4 characters ≈ 1 token. Loading `CURRENT_STATUS` (~2k) + today’s log (~3k) + three specs (~10k) already consumes ~15k tokens—log your estimate at each checkpoint.
 
 ### Role Directory
-- **Grandmaster Ali** — Supreme authority. Issues decrees, approves paradigm shifts.
-- **Supervisor (“Prime”)** — Runs the 1·3·9 check-in, controls tmux airspace, halts work if ratios fail.
+- **Grandmaster Ali** — Supreme authority. Issues decrees, approves paradigm shifts, may serve as Prime directly.
+- **Supervisor (“Prime”)** — Default: Grandmaster Ali. If delegated, the appointed agent must clock in as Prime in `CURRENT_STATUS.md` before builders start; controls tmux airspace, enforces ratios, freezes sessions when required.
 - **Context Document Historian (“Librarian”)** — Manages Layer 1 & 2, assigns Door IDs, digests legacy material (including Skunkworks/2016 drops).
+- **Skunkworks Archivist** — Designated Librarian responsible for Door-04+ (legacy/experimental) audits; catalogs unique features, flags redundancy, recommends “Merge / Archive / Ignore” actions.
 - **Builder Agent (“Node”)** — Executes implementation tasks inside tmux sessions once cleared.
 - **Bullshit Preventer Demolition Man (B.P.D. Man)** — Nukes redundant or contradictory context, merges truth into the canon.
 - **Skunkworks Archivist** (optional Librarian specialization) — Evaluates fringe/legacy repositories, routes useful intel back to the canon.
@@ -66,6 +68,21 @@
 2. Builders attach to their assigned `node*` session and keep it alive until clock-out.
 3. Librarians maintain a read-only pane mirroring each builder session.
 4. Use a dedicated pane or scratch buffer for notes before copying them into logs.
+5. Prime, Librarians, and Nodes are encouraged—**and empowered**—to question orders that conflict with context or reality before Grandmaster Ali confirms the path.
+
+### Mission Control Console
+- **Purpose**: Mission Control (ID `48707`) is the strategic war room: track missions, issue orders, and broadcast updates.
+- **Commands**:
+  - `mc` — opens the control center dashboard.
+  - `mcs` — mission status pulse; run at clock-in and before clock-out.
+  - `mct 'task'` — log or update a mission (quote the summary; include Door IDs when relevant).
+- **Usage Protocol**:
+  1. After loading Layer 1 and Layer 2, execute `mcs` to absorb active directives.
+  2. Record meaningful progress or blockers with `mct 'summary'` alongside the daily log entry.
+  3. Supervisors/Librarians poll Mission Control hourly or whenever Prime issues new orders.
+  4. During emergencies, Grandmaster Ali may broadcast commands via Mission Control—acknowledge them in tmux (`<<Context XX%>> [over]`) and log the response.
+- **tmux vs Mission Control**: tmux governs live shells; Mission Control governs mission metadata. Both must be kept in sync.
+- **Integration**: Whenever a mission is created or finished, update `CURRENT_STATUS.md`, the daily log, and (if necessary) the Door registry to reflect the change.
 
 ### Clock-In Procedure (No Exceptions)
 1. Pull latest `main`.
@@ -84,17 +101,34 @@
 5. Leave tmux session running only if the supervisor authorises a hot hand-off; otherwise close it.
 
 ### Context Window Checkpoints
-- **50% Mid Summary (≤75 tokens)** — Cover: files touched, decisions/blockers, remaining plan.
-- **75% Late Summary (≤40 tokens)** — Confirm: still on plan? new info? highlight blockers.
-- **90% Final Summary (≤30 tokens)** — Hand-off instructions + stop signal. Do **not** continue past 90%.
+- **50% Mid Summary (≤75 tokens)** — Cover: files touched, decisions/blockers, remaining plan. Append `<<Context XX%>>`.
+- **75% Late Summary (≤40 tokens)** — Confirm: still on plan? new info? highlight blockers. Append `<<Context XX%>>`.
+- **90% Final Summary (≤30 tokens)** — Hand-off instructions + stop signal. Append `<<Context 90%>>` and end the session immediately. Do **not** continue past 90%.
 - Record token estimate at each checkpoint (`Tokens Used: ~6k / 12k` etc.).
 - If extra context is required after 90%, coordinate with a Librarian to start a fresh session.
+- **Crash Recovery**: If a session dies before 90%, the next Librarian must (1) review latest commits, (2) inspect tmux history if available, (3) log a Recovery Entry in the daily log before new work starts.
+
+### Field Communications & Flash Messages
+- **Context Call Sign**: Every outbound message—internal log, tmux chat, commit note—must end with `<<Context XX%>> [over]`. Responding agent **must** acknowledge with “Roger.” and their own context meter, e.g., `Roger. <<Context 32%>> [over]`.
+- **Camaraderie Clause**: Agents should remind comrades when the next checkpoint is approaching (“You’re at 45%, checkpoint coming.”). Recipient responds with gratitude (“Thank you.”). Non-compliance carries the unspoken threat of a visit from the BP Demolition Man.
+- **Flash Messages (≤280 chars)**: Use for urgent hand-offs. If you place it at the **top** of the daily log, you’re marking it critical. If you place it at the **bottom**, it’s a footnote. Choose wisely.
+- **Communication Culture**: Treat walkie-talkie etiquette as law—no message without context meter, no response without “Roger,” and no one runs silent.
+
+### Evaluation & Honors
+- Librarians, Prime, and BP Demolition Man may award performance ribbons using double brackets: `[[WINNING]]`, `[[GETTING THERE]]`, `[[MEH]]`, `[[LOSER]]`.
+- Highest honor is `[[WINNING]]`; issue to at most 10 % of active agents. If a librarian/supervisor/"academic historian" exceeds that threshold without Grandmaster Ali’s explicit blessing, expect a BP Demolition Man audit.
+- Record evaluations in the daily log or status snapshot, tied to the session or agent name.
 
 ### Enforcement & Escalation
 - No librarian coverage → **Supervisor denies builder sessions.**
 - Repeated summary violations → assign B.P.D. Man to prune the session log + retrain the agent.
 - Duplicate specs / conflicting docs → Librarian escalates to B.P.D. Man before merging.
+- B.P.D. Man is also summoned when: (a) ≥3 active versions of the same feature exist across doors, (b) any single document exceeds 500 lines and repeats prior material, or (c) Grandmaster Ali decrees demolition.
 - Anything unclear → ask **“What didn’t I think of yet?”** and escalate to Grandmaster Ali.
+- Consequences for ignoring culture are intentionally undisclosed—assume Grandmaster Ali and the BP Demolition Man are watching.
+- If the Librarian coverage ratio is violated mid-session, Prime freezes new work immediately; active builders may finish the current task, reach the next checkpoint, and clock out.
+- First agent to clock in after UTC midnight must open a fresh `logs/YYYY-MM-DD.md`, copy the template, and cross-link the previous day.
+- Librarians must keep `CURRENT_STATUS.md` lean—when it exceeds ~150 lines, archive completed sections to `archives/status-YYYY-MM.md` and leave only active work in the main snapshot.
 
 ---
 
