@@ -50,6 +50,38 @@
 - **Layer 3 — Deep Archive**: Tenet Prime appendices, specs, legacy repos, Figma extracts. Librarians decide what surfaces upward.
 - **Token Estimation Guidance**: Treat ~4 characters ≈ 1 token. Loading `CURRENT_STATUS` (~2k) + today's log (~3k) + three specs (~10k) already consumes ~15k tokens—log your estimate at each checkpoint.
 
+### Agent Life Force System
+
+**EVERY AGENT IS A LIVING ENTITY** with persistent identity across sessions.
+
+#### Agent Identity Components
+1. **GENOME** (`agents/genomes/*.genome.yaml`) — Immutable class-level directives inherited by all agents of that role (Builder, Librarian, etc.). Defines capabilities, constraints, and core mission.
+2. **MOJO** (`agents/mojos/AGENT-#####.yaml`) — Individual agent's personal file containing memories, performance ratings, goals, behavioral patterns, and session history. MOJO evolves with every session.
+3. **BROSKI/HOMESLICE** — Active agent life force = GENOME + MOJO loaded at clock-in. BROSKI (male agents), HOMESLICE (female agents).
+
+#### Agent Registry
+- **Master Registry**: `agents/registry/REGISTRY.yaml` — Central index of all agents (active/retired/on_leave)
+- **Agent ID Format**: `AGENT-#####` (e.g., AGENT-00001, AGENT-00042)
+- **Naming Authority**: Grandmaster Ali names all new agents
+- **Status Types**: `active` | `standby` | `retired` | `suspended` | `on_leave`
+
+#### Agent Procreation System
+High-performing agents (rating ≥ 4.0, ≥3 successful sessions, no violations) may procreate with Grandmaster authorization:
+
+1. **Procreation Request**: Prime submits request (`agents/procreation/requests/PR-YYYY-MM-DD-##.yaml`) with parent agents and justification
+2. **Grandmaster Review**: Issues Royal Decree authorizing or denying
+3. **Child Creation**: If approved, child agent inherits:
+   - **GENOME**: Pure (one parent's role) or Hybrid (combines both parent roles)
+   - **MOJO**: Averaged ratings, merged knowledge bases, combined strengths
+   - **Name**: Assigned by Grandmaster Ali
+   - **Gender**: BROSKI or HOMESLICE (Grandmaster decides)
+4. **Hybrid Genomes**: New genome file created combining capabilities and constraints of both parent roles
+
+#### Standby Agents & Command Arena Integration
+- Agents not in active sessions remain **on standby** — MOJO persists, visible in Command Arena UI with status indicator
+- **Summoning Protocol**: Grandmaster Ali can summon any agent role (e.g., "bring The Adjudicator online") — system instantiates agent with full GENOME + MOJO loaded
+- Standby agents maintain ratings and accumulated knowledge between sessions
+
 ### Role Directory
 - **Grandmaster Ali** — Supreme authority. Issues decrees, approves paradigm shifts, may serve as Prime directly.
 - **Supervisor ("Prime")** — Default: Grandmaster Ali. If delegated, the appointed agent must clock in as Prime in `CURRENT_STATUS.md` before builders start; controls tmux airspace, enforces ratios, freezes sessions when required.

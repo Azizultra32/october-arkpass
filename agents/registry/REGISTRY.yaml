@@ -1,0 +1,31 @@
+metadata:
+  next_agent_id: 1
+  total_agents: 0
+  last_updated: "2025-11-08T19:45Z"
+  version: "1.0.0"
+
+agents: {}
+
+# Quick lookups
+by_role:
+  builder: []
+  librarian: []
+  adjudicator: []
+  consigliere: []
+  constitution_keeper: []
+  twin_a: []
+  twin_b: []
+
+by_status:
+  active: []
+  standby: []
+  retired: []
+  suspended: []
+  on_leave: []
+
+by_gender:
+  broski: []
+  homeslice: []
+
+leaderboard: []
+# Format: [{agent_id: "AGENT-00001", name: "Codex", rating: 4.5}]

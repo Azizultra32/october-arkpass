@@ -1,0 +1,93 @@
+# Agent MOJO Template
+# Copy this to create new agent: agents/mojos/AGENT-#####.yaml
+
+agent_id: "AGENT-#####"
+assigned_name: ""  # Grandmaster Ali assigns name
+gender: ""  # "broski" or "homeslice"
+genome: ""  # builder | librarian | adjudicator | etc.
+birth_session: ""
+birth_date: ""
+status: "standby"  # active | standby | retired | suspended | on_leave
+
+# DIRECTIVE (Agent's personal mission)
+directive:
+  primary: ""
+  specialization: ""
+  constraints: []
+
+# COMPRESSED MEMORY
+memory:
+  compressed_sessions: []
+  # Format:
+  # - session: "Session X"
+  #   context_used: "12000 tokens"
+  #   key_learnings:
+  #     - "Learned X"
+  #     - "Discovered Y"
+  #   artifacts_created:
+  #     - "file.ext"
+
+  knowledge_base: []
+  # Accumulated expertise across all sessions
+
+# PERFORMANCE METRICS
+evaluations:
+  overall_rating: 0.0  # 0-5 scale
+  sessions_completed: 0
+
+  breakdown:
+    technical_accuracy: 0.0
+    constitutional_compliance: 0.0
+    documentation_quality: 0.0
+    context_management: 0.0
+    velocity: 0.0
+
+  peer_reviews: []
+  supervisor_notes: []
+  violations: []
+
+# GOALS & CAREER
+goals:
+  current: []
+  next: []
+  career_path: ""
+  achievements: []
+
+# BEHAVIORAL PATTERNS
+patterns:
+  strengths: []
+  weaknesses: []
+  communication_style: ""
+  preferred_tools: []
+  work_rhythm: ""
+
+# RELATIONSHIPS
+relationships:
+  supervisor: "Prime"
+  collaborators: []
+  mentoring: []
+
+# LINEAGE (if procreated)
+lineage:
+  generation: 1  # 1 = original, 2 = child, etc.
+  parents: []
+  children: []
+  birth_authorization: null
+
+# SESSION HISTORY
+session_log: []
+# Format:
+# - session_id: "Session X"
+#   date: "2025-11-08T19:15Z"
+#   duration_minutes: 115
+#   log_ref: "logs/2025-11-08.md:49-58"
+#   commits: []
+#   outcome: "success"
+#   rating: 4.2
+
+# METADATA
+created_at: ""
+last_active: ""
+total_tokens_used: 0
+total_commits: 0
+version: "1.0.0"
