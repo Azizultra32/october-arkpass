@@ -1,7 +1,5 @@
 # ArkPass Dev Tenet Prime
 
-**LOCK NOTICE**: This Testament is locked. Any modification requires explicit Royal Decree from Grandmaster Ali. Reference archive `archives/ARKPASS_DEV_TENET_PRIME_v3.0.0.md` before proposing changes.
-
 **STATUS**: 🟢 ACTIVE CANONICAL SOURCE OF TRUTH
 **VERSION**: 2.3.0
 **LAST UPDATED**: 2025-11-08
@@ -1673,8 +1671,6 @@ october-arkpass/
 | 2.0.0 | 2025-11-08 | Constitutional upgrade: layered context system, roles, procedures, BP Demolition Man, Adjudicator | Agent Codex |
 | 2.1.0 | 2025-11-08 | Added Constitutional Improvement Agent (Constitution Keeper) - dedicated full-time role to maintain/improve constitution. Added The Twins (Twin A & Twin B) - dedicated full-time UI/UX specialists with 3-phase competitive development cycle + Tea Ceremony approval process. | Claude Code (Session 5) |
 | 2.2.0 | 2025-11-08 | **CRITICAL GOVERNANCE UPDATE**: Changed 9 Immutable Commitments → 10 Immutable Commitments. Added #10: "Document all new roles, processes, and governance structures in BOTH constitution AND working files (CURRENT_STATUS.md, daily logs) immediately upon creation - No role exists until documented in all three locations." Ensures constitutional changes immediately propagate to operational files. | Claude Code (Session 5) |
-| 2.3.0 | 2025-11-08 | Established Consigliere as sole royal interface, formalized adjudication workflows, expanded role directory, integrated mission control protocols. | Claude Code (Session 6) |
-| 3.0.0 | 2025-11-08 | Elevated Agent Life Force Testament above constitution, instituted silent courier protocol, formalized Mithraic Oath supremacy, locked Testament with archival backup. | Codex |
 
 ---
 
@@ -1697,7 +1693,7 @@ october-arkpass/
 
 ---
 
-**END OF ARKPASS DEV TENET PRIME v3.0.0**
+**END OF ARKPASS DEV TENET PRIME v2.0.0**
 
-*Last verified by: Codex (2025-11-08)*
-*Next agent: Consult archive `archives/ARKPASS_DEV_TENET_PRIME_v3.0.0.md`, update `logs/YYYY-MM-DD.md` + `CURRENT_STATUS.md`, then continue from "Recommended Next Steps"*
+*Last verified by: Agent Codex (2025-11-08)*
+*Next agent: Update `logs/YYYY-MM-DD.md` + `CURRENT_STATUS.md`, then continue from "Recommended Next Steps"*
