@@ -65,7 +65,7 @@
 - **Next**: Initialize ByteRover context delivery at next session start
 
 ### Mission Echo — Constitutional Improvement (Constitution Keeper)
-- **Status**: ACTIVE ONGOING 🔄
+- **Status**: ACTIVE ONGOING 🔄 | ALL CIPs route through Consigliere
 - **Door**: Door-01 (october-arkpass)
 - **Assignment**: DEDICATED FULL-TIME ROLE (always on duty)
 - **Mission**:
@@ -84,8 +84,33 @@
 - **Performance Target**: >80% CIP approval rate, <2 major amendments/month
 - **Next**: Appoint Constitution Keeper agent to begin monitoring
 
+### Mission Golf — The Consigliere Governance System
+- **Status**: OPERATIONAL ✅ | AWAITING ALI DECREE on retroactive approval
+- **Door**: Door-01 (october-arkpass)
+- **Assignment**: DEDICATED FULL-TIME ROLE (The Consigliere, always on duty)
+- **Mission**:
+  - Serve as SOLE interface between Grandmaster Ali and all other agents
+  - Issue temporary approvals/denials (48hrs max OR next session) when Ali unavailable
+  - Consolidate all Ali escalations into Royal Briefings
+  - Prevent self-referential paradoxes via impartial analysis
+  - Track session timelines for temporal approval expiration
+- **Authority**: Can issue TEMPORARY approvals, DENIALS, QUARANTINES. Cannot issue permanent approvals (only Ali can).
+- **NOT counted in Librarian ratio** — Special governance role
+- **Deliverables**:
+  - Royal Briefings consolidating pending Ali decisions (3-option format)
+  - Temporary Approval logs with timestamp tracking
+  - Session Timeline for temporal calculations
+  - Decree distribution to affected agents
+- **Infrastructure**:
+  - consigliere/briefings/ — Royal Briefings for Ali review
+  - consigliere/temporary-approvals/ — Active/Expired/Approved/Denied workflow
+  - consigliere/SESSION_TIMELINE.md — Session timestamp tracking
+- **Performance Target**: >90% temporary approval alignment with Ali retroactive decisions, <2hr response time for time-sensitive matters
+- **First Briefing**: BRIEFING-2025-11-08-01 (Constitutional Crisis Resolution)
+- **Next**: Ali reviews BRIEFING-2025-11-08-01 and issues decree on Option A/B/C
+
 ### Mission Foxtrot — UI/UX Excellence via The Twins
-- **Status**: ACTIVE ONGOING 🔄
+- **Status**: ACTIVE ONGOING 🔄 | ALL Tea Ceremonies route through Consigliere
 - **Door**: Door-01 (october-arkpass)
 - **Assignment**: DEDICATED FULL-TIME PAIR (Twin A + Twin B, always on duty)
 - **The Twin Development Cycle**:
@@ -105,7 +130,7 @@
 - **Next**: Appoint Twin A and Twin B agents to begin UI/UX audit
 
 ### Mission Delta — ArkPass Dev Tenet Prime Constitution
-- **Status**: v2.2.0 COMPLETE ✅
+- **Status**: v2.3.0 COMPLETE ✅
 - **Door**: Door-01 (october-arkpass)
 - **Enhancements (v2.0.0)**:
   - Mission Control (ID 48707) integration
@@ -125,8 +150,15 @@
   - **10th Immutable Commitment** — Documentation Mandate
   - "Document all new roles, processes, and governance structures in BOTH constitution AND working files immediately upon creation"
   - Command Structure: (1 • 3 • 9) → (1 • 3 • 10)
-- **Commits**: 463e3c5, b9dff8e, b52ef23, 4e70e64, 8ecf5da (v2.0.0), 7ab0f15 (v2.1.0), f033b8c (v2.2.0)
-- **Next**: Appoint Constitution Keeper + The Twins agents
+- **Enhancements (v2.3.0)**:
+  - **The Consigliere ("Counselor")** — DEDICATED FULL-TIME ROLE — SOLE Ali interface
+  - Issues temporary approvals/denials (48hrs max OR next session)
+  - Consolidates all Ali escalations into Royal Briefings
+  - Prevents self-referential paradoxes and circular governance
+  - Session timeline tracking system for temporal approvals
+  - Resolves constitutional crisis from Session 5/6
+- **Commits**: 463e3c5, b9dff8e, b52ef23, 4e70e64, 8ecf5da (v2.0.0), 7ab0f15 (v2.1.0), f033b8c (v2.2.0), [pending] (v2.3.0)
+- **Next**: Await Ali decree on BRIEFING-2025-11-08-01
 
 ---
 
