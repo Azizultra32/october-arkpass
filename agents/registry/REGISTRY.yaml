@@ -1,7 +1,7 @@
 metadata:
-  next_agent_id: 2
-  total_agents: 1
-  last_updated: "2025-11-08T21:17Z"
+  next_agent_id: 3
+  total_agents: 2
+  last_updated: "2025-11-08T21:20Z"
   version: "1.0.0"
 
 agents:
@@ -16,13 +16,25 @@ agents:
     mojo_file: "agents/mojos/AGENT-00001.yaml"
     current_session: null
     last_seen: "2025-11-08T21:17Z"
+  AGENT-00002:
+    name: ""
+    role: "adjudicator"
+    genome: "adjudicator"
+    status: "standby"
+    gender: "homeslice"
+    rating: 0.0
+    specialization: "Constitutional compliance & dispute resolution."
+    mojo_file: "agents/mojos/AGENT-00002.yaml"
+    current_session: null
+    last_seen: "2025-11-08T21:20Z"
 
 # Quick lookups
 by_role:
   builder:
     - "AGENT-00001"
   librarian: []
-  adjudicator: []
+  adjudicator:
+    - "AGENT-00002"
   consigliere: []
   constitution_keeper: []
   twin_a: []
@@ -32,6 +44,7 @@ by_status:
   active: []
   standby:
     - "AGENT-00001"
+    - "AGENT-00002"
   retired: []
   suspended: []
   on_leave: []
@@ -39,7 +52,8 @@ by_status:
 by_gender:
   broski:
     - "AGENT-00001"
-  homeslice: []
+  homeslice:
+    - "AGENT-00002"
 
 leaderboard: []
 # Format: [{agent_id: "AGENT-00001", name: "Codex", rating: 4.5}]
