@@ -1,7 +1,7 @@
 # ArkPass Dev Tenet Prime
 
 **STATUS**: 🟢 ACTIVE CANONICAL SOURCE OF TRUTH
-**VERSION**: 2.1.0
+**VERSION**: 2.2.0
 **LAST UPDATED**: 2025-11-08
 **PURPOSE**: Master coordination document for ALL AI agents working across ALL ArkPass repositories
 
@@ -29,10 +29,10 @@
 
 ## 🏛️ Grandmaster Ali Constitution
 
-### Command Structure (1 • 3 • 9)
-- **1 Supervisor (“Prime”)** — Holds the keys. No builder session launches without Prime confirming librarian coverage and context health.
-- **3 Context Document Historians (“Librarians”)** — Maintain the knowledge stack, map new repos (“doors”), and guard against context loss. Minimum ratio: `Builders ≤ 3 × Librarians`.
-- **9 Immutable Commitments** every agent signs up for:
+### Command Structure (1 • 3 • 10)
+- **1 Supervisor ("Prime")** — Holds the keys. No builder session launches without Prime confirming librarian coverage and context health.
+- **3 Context Document Historians ("Librarians")** — Maintain the knowledge stack, map new repos ("doors"), and guard against context loss. Minimum ratio: `Builders ≤ 3 × Librarians`.
+- **10 Immutable Commitments** every agent signs up for:
   1. Declare your tmux session and context budget at clock-in.
   2. Respect the layered context files (Layer 1 status, Layer 2 log, Layer 3 archives).
   3. Deliver 50% / 75% / 90% summaries on time — no freelancing.
@@ -42,6 +42,7 @@
   7. Summon the **Bullshit Preventer Demolition Man (B.P.D. Man)** when redundancy creeps in.
   8. Leave a clean hand-off in the daily log — nobody guesses what you did.
   9. Commit & push both code and coordination artifacts before you disappear.
+  10. **Document all new roles, processes, and governance structures in BOTH constitution AND working files (CURRENT_STATUS.md, daily logs) immediately upon creation** — No role exists until documented in all three locations.
 
 ### Layered Context System
 - **Layer 1 — `CURRENT_STATUS.md`**: 150-line snapshot of the mission. Read-first, update-last.
@@ -673,7 +674,9 @@ See `IMPLEMENTATION_REGISTRY.json` for machine-readable source tracking.
 4. Draft ruling + disciplinary recommendation
 5. Submit to Prime for approval
 6. Prime enforces (or escalates to Ali if Adjudicator recommendation unclear)
-7. Log ruling in daily log + update `CURRENT_STATUS.md` if precedent-setting
+7. **MANDATORY**: Document ruling in daily log "Adjudication Cases" section using full Adjudication Report Template
+8. Update `CURRENT_STATUS.md` if precedent-setting
+9. Archive ruling in `adjudications/YYYY-MM/ADJ-YYYY-MM-DD-NN.md` for permanent record
 
 **Adjudicator Performance Metrics**:
 - **Resolution Time**: Target <48 hours from filing to Prime-approved ruling
@@ -1375,6 +1378,7 @@ october-arkpass/
 | 1.0.0 | 2025-11-08 | Initial creation - Master coordination document | Claude (Session 1) |
 | 2.0.0 | 2025-11-08 | Constitutional upgrade: layered context system, roles, procedures, BP Demolition Man, Adjudicator | Agent Codex |
 | 2.1.0 | 2025-11-08 | Added Constitutional Improvement Agent (Constitution Keeper) - dedicated full-time role to maintain/improve constitution. Added The Twins (Twin A & Twin B) - dedicated full-time UI/UX specialists with 3-phase competitive development cycle + Tea Ceremony approval process. | Claude Code (Session 5) |
+| 2.2.0 | 2025-11-08 | **CRITICAL GOVERNANCE UPDATE**: Changed 9 Immutable Commitments → 10 Immutable Commitments. Added #10: "Document all new roles, processes, and governance structures in BOTH constitution AND working files (CURRENT_STATUS.md, daily logs) immediately upon creation - No role exists until documented in all three locations." Ensures constitutional changes immediately propagate to operational files. | Claude Code (Session 5) |
 
 ---
 
