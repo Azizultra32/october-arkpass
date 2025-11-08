@@ -1,7 +1,7 @@
 # ArkPass Dev Tenet Prime
 
 **STATUS**: 🟢 ACTIVE CANONICAL SOURCE OF TRUTH
-**VERSION**: 1.0.0
+**VERSION**: 2.0.0
 **LAST UPDATED**: 2025-11-08
 **PURPOSE**: Master coordination document for ALL AI agents working across ALL ArkPass repositories
 
@@ -10,12 +10,13 @@
 ## 🔴 MANDATORY: Read This First
 
 **EVERY AI AGENT MUST:**
-1. ✅ Read this document in full before starting ANY work
-2. ✅ Clock in by updating the "Agent Activity Log" section
-3. ✅ Review the "Repository Status Matrix" to understand what has been done
-4. ✅ Update your work session in real-time as you complete tasks
-5. ✅ Clock out by committing your session summary to this document
-6. ✅ Push changes to GitHub so other agents can see your work
+1. ✅ Read this constitution in full before touching any repo.
+2. ✅ Review `CURRENT_STATUS.md` (Layer 1 snapshot) to understand the live state.
+3. ✅ Read today’s entry in `logs/YYYY-MM-DD.md` (Layer 2) so you know the latest moves.
+4. ✅ Confirm Supervisor clearance (ratio check: `Builders ≤ 3 × Librarians`) before clock-in.
+5. ✅ Clock in via the daily log template, declare your context budget, and open a tmux session.
+6. ✅ Deliver 50% / 75% / 90% context summaries, update `CURRENT_STATUS.md`, and record outputs.
+7. ✅ Commit + push code **and** coordination files before handing off.
 
 **THIS DOCUMENT IS THE SINGLE SOURCE OF TRUTH FOR:**
 - Which repositories exist and their current state
@@ -23,6 +24,77 @@
 - Which specs/markdown files have been created
 - What problems have been solved and what remains
 - Coordination between multiple development attempts
+
+---
+
+## 🏛️ Grandmaster Ali Constitution
+
+### Command Structure (1 • 3 • 9)
+- **1 Supervisor (“Prime”)** — Holds the keys. No builder session launches without Prime confirming librarian coverage and context health.
+- **3 Context Document Historians (“Librarians”)** — Maintain the knowledge stack, map new repos (“doors”), and guard against context loss. Minimum ratio: `Builders ≤ 3 × Librarians`.
+- **9 Immutable Commitments** every agent signs up for:
+  1. Declare your tmux session and context budget at clock-in.
+  2. Respect the layered context files (Layer 1 status, Layer 2 log, Layer 3 archives).
+  3. Deliver 50% / 75% / 90% summaries on time — no freelancing.
+  4. Update `CURRENT_STATUS.md` the moment reality changes.
+  5. Catalogue every new repo/folder with a Door ID before opening files.
+  6. Escalate ambiguous decisions to Grandmaster Ali or the Decision Authority Matrix.
+  7. Summon the **Bullshit Preventer Demolition Man (B.P.D. Man)** when redundancy creeps in.
+  8. Leave a clean hand-off in the daily log — nobody guesses what you did.
+  9. Commit & push both code and coordination artifacts before you disappear.
+
+### Layered Context System
+- **Layer 1 — `CURRENT_STATUS.md`**: 150-line snapshot of the mission. Read-first, update-last.
+- **Layer 2 — `logs/YYYY-MM-DD.md`**: Daily session ledger with fixed template and checkpoint summaries.
+- **Layer 3 — Deep Archive**: Tenet Prime appendices, specs, legacy repos, Figma extracts. Librarians decide what surfaces upward.
+
+### Role Directory
+- **Grandmaster Ali** — Supreme authority. Issues decrees, approves paradigm shifts.
+- **Supervisor (“Prime”)** — Runs the 1·3·9 check-in, controls tmux airspace, halts work if ratios fail.
+- **Context Document Historian (“Librarian”)** — Manages Layer 1 & 2, assigns Door IDs, digests legacy material (including Skunkworks/2016 drops).
+- **Builder Agent (“Node”)** — Executes implementation tasks inside tmux sessions once cleared.
+- **Bullshit Preventer Demolition Man (B.P.D. Man)** — Nukes redundant or contradictory context, merges truth into the canon.
+- **Skunkworks Archivist** (optional Librarian specialization) — Evaluates fringe/legacy repositories, routes useful intel back to the canon.
+
+### Doorway Registry
+- Every repo/folder under review receives a **Door ID** (e.g., `Door-08`).
+- Door table lives in `CURRENT_STATUS.md` under “Intake Queue”.
+- Librarians must mark `Status` (`Queued`, `Processing`, `Merged`, `Archived`) before builders touch code from that source.
+
+### tmux Operations
+1. Supervisor creates/authorises sessions: `tmux new -s prime`, `tmux new -s node1`, etc.
+2. Builders attach to their assigned `node*` session and keep it alive until clock-out.
+3. Librarians maintain a read-only pane mirroring each builder session.
+4. Use a dedicated pane or scratch buffer for notes before copying them into logs.
+
+### Clock-In Procedure (No Exceptions)
+1. Pull latest `main`.
+2. Supervisor confirms librarian coverage ratio; record approval in the daily log entry.
+3. Librarian updates `CURRENT_STATUS.md` if anything changed since the last entry.
+4. Read `CURRENT_STATUS.md` + today’s log tail.
+5. Reserve/declare a Door ID for any new repo/folder you will open.
+6. Start/attach tmux session, note the name.
+7. Copy the session template in `logs/YYYY-MM-DD.md`, fill header lines, declare context budget (estimated tokens).
+
+### Clock-Out Procedure
+1. Capture required 50% / 75% / 90% summaries (or mark N/A if you never reached the checkpoint).
+2. Document outputs (commits, files) and hand-off in the daily log.
+3. Update `CURRENT_STATUS.md` bullets reflecting completed/blocked work.
+4. Commit coordination files **and** code changes; push to `main`.
+5. Leave tmux session running only if the supervisor authorises a hot hand-off; otherwise close it.
+
+### Context Window Checkpoints
+- **50% Mid Summary (≤75 tokens)** — Cover: files touched, decisions/blockers, remaining plan.
+- **75% Late Summary (≤40 tokens)** — Confirm: still on plan? new info? highlight blockers.
+- **90% Final Summary (≤30 tokens)** — Hand-off instructions + stop signal. Do **not** continue past 90%.
+- Record token estimate at each checkpoint (`Tokens Used: ~6k / 12k` etc.).
+- If extra context is required after 90%, coordinate with a Librarian to start a fresh session.
+
+### Enforcement & Escalation
+- No librarian coverage → **Supervisor denies builder sessions.**
+- Repeated summary violations → assign B.P.D. Man to prune the session log + retrain the agent.
+- Duplicate specs / conflicting docs → Librarian escalates to B.P.D. Man before merging.
+- Anything unclear → ask **“What didn’t I think of yet?”** and escalate to Grandmaster Ali.
 
 ---
 
@@ -230,144 +302,20 @@
 
 ---
 
-## 🔄 Agent Activity Log
+## 🗓️ Daily Log System (Layer 2)
 
-### Session Template
-```markdown
-#### [DATE] [TIME] - Agent [NAME/ID]
-**Action**: CLOCK IN
-**Repository**: [repo-name]
-**Branch**: [branch-name]
-**Task**: [Brief description]
-**Files Modified**: [List]
-**Commits**: [commit-hash if any]
-**Status**: IN PROGRESS / COMPLETED / BLOCKED
-**Notes**: [Any observations, blockers, or handoff notes]
-**Action**: CLOCK OUT
-**Duration**: [time]
-```
+- Daily session records live in `logs/YYYY-MM-DD.md`.
+- Copy the template at the top of the file, fill it during clock-in, and append updates in place.
+- Librarians rotate the file at UTC midnight (new day → new markdown file).
+- Legacy sessions prior to Version 2.0 are preserved in the 2025-11-08 file with a “Pre-framework” marker.
+- Do **not** edit previous sessions except to correct factual errors (coordinate with a Librarian first).
 
-### Active Sessions
+Key checkpoints recorded per session:
+1. **Mid Summary @50%** ≤75 tokens.
+2. **Late Summary @75%** ≤40 tokens.
+3. **Final Summary @90%** ≤30 tokens — end the session immediately afterward.
 
-#### 2025-11-08 - Agent Claude (Session 1)
-**Action**: CLOCK IN
-**Repository**: october-arkpass
-**Branch**: main
-**Task**: Extract dashboard/navigation screens from Figma, create ARKPASS_DEV_TENET_PRIME.md
-**Files Created**:
-- `DASHBOARD_NAVIGATION_SCREENS_SPECS.md` (800 lines)
-- `ARKPASS_DEV_TENET_PRIME.md` (this file)
-
-**Files Modified**:
-- `DATABASE_FILES_INDEX.md` (added dashboard spec to index)
-
-**Commits**:
-- `463e3c5` - docs: Add comprehensive dashboard & navigation screens specification
-
-**Status**: IN PROGRESS
-**Notes**:
-- Successfully extracted 9 navigation screens (auth, dashboard, sharing, pre-visit questionnaire)
-- Documented access code lifecycle with color-coded states
-- User indicated possible home screen redesign - awaiting requirements
-- All changes pushed to GitHub
-
-**Next Agent Should**:
-- Review this document first
-- Check if user provided home screen redesign requirements
-- If starting implementation, begin with INVIC schema inspection
-- Update this log with your session
-
-#### 2025-11-08 06:45 AM - Agent Claude (Session 2)
-**Action**: CLOCK IN
-**Repository**: october-arkpass
-**Branch**: main
-**Task**: Review downloaded armada-arkpass codebase, identify missing dashboard/navigation components, clarify implementation gaps
-
-**Analysis Completed**:
-- Reviewed `/Users/ali/Downloads/armada-arkpass (5)/src` codebase
-- Identified existing dashboard components: Dashboard.tsx, EnhancedDashboard.tsx, RecordsList.tsx, Navbar.tsx, SharedCard components
-- Compared with current `october-arkpass/app/src` implementation
-- Confirmed current app routes directly to `/medications` with no dashboard/home screen
-
-**Key Findings**:
-1. **Downloaded version HAS**:
-   - Dashboard with welcome banner, profile photo, quick stats (conditions: 4, medications: 5, visits: 3, documents: 12)
-   - RecordsList component showing grid of health record cards
-   - Bottom navigation (mobile: 3 icons, desktop: 5-item sidebar)
-   - SharedCard components for access code management
-   - Layout wrappers (Layout, LayoutNoMidbar, LayoutDoctors)
-   - VisitNotes, DashboardWelcome, Logo components
-
-2. **Current october-arkpass app MISSING**:
-   - Dashboard screen (no home page)
-   - Bottom navigation bar
-   - Access code/sharing features
-   - Layout wrappers
-   - All navigation infrastructure
-
-3. **What IS built in current app**:
-   - All 10 PHR feature list screens (medications, allergies, conditions, surgeries, immunizations, supplements, family-history, social-history, personal-information, documents)
-   - Add screens for each feature
-   - View screens for each feature
-   - Routes configured but no navigation UI
-
-**User Questions Answered**:
-- Navigation bar colors: White background (#FFFFFF), black icons (#000000), black top border (1px)
-- Sharing workflow: Color-coded cards - Yellow (active #FFFCBA), Orange (unused #FBBC05), Gray (pending #EEEEEE), White (expired)
-- Access codes: 5-digit codes with time expiry (48h/1week/1month/custom)
-
-**Status**: IN PROGRESS
-**Notes**:
-- User confirmed downloaded armada-arkpass has components we need
-- All 10 PHR features built but no way to navigate between them
-- Dashboard spec exists (DASHBOARD_NAVIGATION_SCREENS_SPECS.md) but not implemented
-- Ready to implement dashboard + bottom nav OR port from downloaded version
-
-**Next Action Options**:
-1. Port dashboard components from downloaded armada-arkpass to current app
-2. Build dashboard fresh from DASHBOARD_NAVIGATION_SCREENS_SPECS.md
-3. Hybrid: Use downloaded as reference, build to match current app architecture
-
-**Awaiting**: User decision on implementation approach
-
-#### 2025-11-08 07:15 AM - Agent Claude (Session 2 - Continued)
-**Action**: UPDATE
-**Task**: Add Decision Authority Matrix to ARKPASS_DEV_TENET_PRIME.md
-
-**Enhancement Added**:
-- Created comprehensive Decision Authority Matrix section
-- Categorized 25+ decision types into 5 categories:
-  - Schema & Database (5 decisions)
-  - Frontend Implementation (5 decisions)
-  - Code Quality (4 decisions)
-  - Documentation (4 decisions)
-  - Git Operations (4 decisions)
-  - Testing & Validation (3 decisions)
-
-**Matrix Legend**:
-- ✅ Yes: Agent can proceed autonomously
-- 🚨 ASK USER FIRST: Requires explicit approval
-- 🚨 WAIT FOR USER: User will provide requirements
-- 🚨 NEVER: Forbidden operations
-
-**Key Rules Established**:
-- Port components from downloaded repos → ASK USER FIRST
-- Production migrations → ASK USER FIRST
-- Home screen redesign → WAIT FOR USER
-- Force push to main → NEVER (forbidden)
-- Update ARKPASS_DEV_TENET_PRIME.md → MANDATORY with every session
-
-**"When In Doubt" Decision Tree Added**:
-- Affects UX → ASK USER
-- Changes architecture → ASK USER
-- Reversible via git → Probably OK
-- Follows existing patterns → Probably OK
-- Still unsure → ASK USER
-
-**Files Modified**:
-- `ARKPASS_DEV_TENET_PRIME.md` (added 52 lines)
-
-**Status**: READY FOR COMMIT
+If you never reach a checkpoint (e.g., short session), mark it `N/A (session ended before checkpoint)`.
 
 ---
 
@@ -422,6 +370,167 @@
 3. Check if it's reversible via git → Probably OK to proceed
 4. Check if it follows existing patterns → Probably OK to proceed
 5. Still unsure? → ASK USER (better safe than sorry)
+
+---
+
+## 🚪 Source Tracking Protocol
+
+**PURPOSE**: Every piece of documentation, code, or analysis MUST reference which repository/folder it originated from.
+
+### Door Numbering System
+
+Each ArkPass implementation gets a unique "door number" for permanent tracking:
+
+| Door # | Repository Name | Location | Type | Status | Key Features |
+|--------|----------------|----------|------|--------|--------------|
+| **Door 1** | october-arkpass | `/Users/ali/october-arkpass` | PRIMARY-ACTIVE | 🟢 MAIN | Database schema, Figma specs, OpenSpec proposals |
+| **Door 2** | INVIC-headless | Supabase project (gqahazcatpgzzfujnidk) | PRODUCTION-DB | 🟡 ACTIVE | Production PostgreSQL database |
+| **Door 3** | armada-arkpass-v5 | `/Users/ali/Downloads/armada-arkpass (5)` | PREVIOUS-IMPL | 🟡 REFERENCE | Dashboard, SharedCards, Navigation components |
+| *(Door 4+)* | *(To be assigned)* | *(Paths TBD)* | *(Type TBD)* | 🔴 PENDING | *(Features TBD)* |
+
+### Repository Type Classification
+
+- **PRIMARY-ACTIVE**: Current development focus, all new work goes here
+- **PRODUCTION-DB**: Live database, read-only inspection, migrations require approval
+- **PREVIOUS-IMPL**: Historical implementations with potentially useful code
+- **REFERENCE**: Contains valuable docs/designs but outdated implementation
+- **EXPERIMENTAL**: Skunkworks features, may be promoted or deprecated
+- **DEPRECATED**: Do not use, kept for historical reference only
+
+### Mandatory Source Stamp Format
+
+**Every audit file, analysis document, or ported code MUST include this header:**
+
+```markdown
+🚪 SOURCE: Door #[N] - [repository-name]
+📍 Location: [full-path]
+📅 Audited: [YYYY-MM-DD]
+🔍 Auditor: [Agent-Session-ID]
+📦 Features Found: [list]
+```
+
+**Example:**
+```markdown
+🚪 SOURCE: Door #3 - armada-arkpass-v5
+📍 Location: /Users/ali/Downloads/armada-arkpass (5)/src/components
+📅 Audited: 2025-11-08
+🔍 Auditor: Session-3-Auditor-Agent
+📦 Features Found: Dashboard, SharedCards, RecordsList, BottomNavigation
+```
+
+### Source Tracking Rules
+
+1. **NEVER document code without source stamp** - Always reference door number
+2. **NEVER merge implementations without tracking** - Document which door each piece came from
+3. **NEVER claim "we have X" without specifying** - State door number when referencing features
+4. **ALWAYS update IMPLEMENTATION_REGISTRY.json** - Keep door registry current
+5. **ALWAYS note conflicts between doors** - When Door 3 and Door 5 implement same feature differently
+
+### Implementation Registry Structure
+
+See `IMPLEMENTATION_REGISTRY.json` for machine-readable source tracking.
+
+---
+
+## 🏗️ Agent Roles & Responsibilities
+
+### BP Demolition Man (Bullshit Preventer Demolition Man)
+
+**Official Name**: Bullshit Preventer Demolition Man
+**Call Sign**: Demolition Man
+**Short Form**: BPD Man (for academic purposes)
+**Award Ceremonies**: Full legal name required
+
+**Mission**: Eliminate redundancy, merge duplicates, clear context windows, enforce "one source of truth" rule.
+
+**Responsibilities**:
+1. **Find Redundant Documentation**
+   - Search for duplicate specs across multiple doors
+   - Identify overlapping feature documentation
+   - Example: 3 different allergies screen specs from Door 3, Door 5, Door 7
+
+2. **Demolish Duplicates**
+   - Compare versions side-by-side
+   - Identify winner (most complete, most recent, best aligned with Figma)
+   - Archive losers with source stamps
+   - Merge into single canonical source
+
+3. **Report Impact**
+   - "Demolished 3000 lines of redundant allergies docs"
+   - "Unified 5 dashboard implementations into 1 file"
+   - "Cleared 12KB from context window"
+   - Document which door numbers were consolidated
+
+4. **Maintain Source Tracking**
+   - Every demolition report must list source doors
+   - Example: "Merged Door 3 + Door 5 + Door 7 → Door 1 (october-arkpass)"
+   - Update IMPLEMENTATION_REGISTRY.json with consolidation notes
+
+**When to Call Demolition Man**:
+- After auditing 3+ repositories
+- When context windows are getting bloated
+- When multiple specs exist for same feature
+- When AI-generated fluff is cluttering docs
+
+**Authority Level**:
+- ✅ Can demolish redundant docs autonomously (after comparison)
+- ✅ Can merge similar implementations
+- 🚨 **MUST preserve source stamps** before demolition
+- 🚨 **MUST document which door won** in consolidation
+- 🚨 **ASK USER if unclear which version is winner**
+
+**Demolition Report Template**:
+```markdown
+## Demolition Man Report - [DATE]
+
+**Doors Audited**: Door #3, Door #5, Door #7
+**Feature**: Allergies Management
+**Redundancy Found**: 3 separate implementations
+
+### Version Comparison
+| Door # | Lines | Completeness | Figma Match | Last Updated | Decision |
+|--------|-------|--------------|-------------|--------------|----------|
+| Door 3 | 828   | 95%          | ✅ Exact     | Recent       | 🏆 WINNER |
+| Door 5 | 612   | 80%          | ⚠️ Partial  | Old          | 🗑️ DEMOLISH |
+| Door 7 | 445   | 60%          | ❌ Differs  | Very old     | 🗑️ DEMOLISH |
+
+### Actions Taken
+- ✅ Merged Door 5 unique features into Door 3 spec
+- ✅ Archived Door 7 version with source stamp
+- ✅ Updated IMPLEMENTATION_REGISTRY.json
+- ✅ Unified spec saved to october-arkpass (Door 1)
+
+### Impact
+- **Demolished**: 1057 lines of redundant documentation
+- **Context Saved**: ~8KB
+- **Source**: Door 5 + Door 7 → Door 1 (via Door 3 as base)
+```
+
+### Other Agent Roles
+
+**Auditor Agent**:
+- Reviews each door (repository/implementation)
+- Creates audit files with source stamps
+- Identifies unique features vs redundant features
+- Does NOT make consolidation decisions (just reports findings)
+
+**Reconciler Agent**:
+- Builds comparison matrices between doors
+- Identifies conflicts (Door 3 uses X, Door 5 uses Y for same feature)
+- Creates RECONCILIATION_MATRIX.md
+- Recommends winners but doesn't demolish (that's Demolition Man's job)
+
+**Skunkworks Agent**:
+- Reviews experimental/unknown features
+- Identifies features not in Figma
+- Documents potential future features
+- Tags features as "experimental" vs "production-ready"
+
+**Unifier Agent**:
+- After Demolition Man clears redundancy
+- Builds final unified OpenSpec
+- Ensures all features from all doors are represented
+- Creates fresh implementation plan
 
 ---
 
@@ -522,15 +631,14 @@ october-arkpass/
 
 ### For New Agents Joining Mid-Project
 
-1. **Read ARKPASS_DEV_TENET_PRIME.md** (this document) - MANDATORY
-2. **Check Agent Activity Log** - See what the last agent did
-3. **Review DATABASE_FILES_INDEX.md** - Understand all 33 files
-4. **Clock In** - Add your session to Activity Log
-5. **Check Blockers Section** - See if anything is blocking progress
-6. **Start Work** - Follow the task breakdown in openspec/changes/.../tasks.md
-7. **Update as You Go** - Keep Activity Log current
-8. **Clock Out** - Commit your session summary
-9. **Push to GitHub** - So next agent can see your work
+1. **Read ARKPASS_DEV_TENET_PRIME.md** (this constitution) — mandatory.
+2. **Load Layer 1** — Read `CURRENT_STATUS.md` and note staffing/doors.
+3. **Load Layer 2** — Read today’s `logs/YYYY-MM-DD.md` tail; understand prior sessions.
+4. **Confirm Supervisor Clearance** — Ratio check + tmux session assignment.
+5. **Reserve Door IDs** — Log any new repos/folders you will touch.
+6. **Open tmux + Clock In** — Copy the template in today’s log, declare context budget.
+7. **Work the Plan** — Follow `openspec/changes/.../tasks.md` and domain-specific checklists.
+8. **Clock Out Cleanly** — Update summaries, `CURRENT_STATUS.md`, log entry, then commit + push.
 
 ### For Planning/Design Work
 
@@ -548,7 +656,7 @@ october-arkpass/
 3. Run migrations in dev environment first (never production directly)
 4. Follow validation checklist in `SCHEMA_VALIDATION_CHECKLIST.md`
 5. Test dual-mode date fields with sample data
-6. Document any issues in Activity Log
+6. Document blockers in daily log + `CURRENT_STATUS.md`
 
 ### For Figma Screen Extraction
 
@@ -611,6 +719,7 @@ october-arkpass/
 | Version | Date | Changes | Updated By |
 |---------|------|---------|------------|
 | 1.0.0 | 2025-11-08 | Initial creation - Master coordination document | Claude (Session 1) |
+| 2.0.0 | 2025-11-08 | Constitutional upgrade: layered context system, roles, procedures, BP Demolition Man | Agent Codex |
 
 ---
 
@@ -619,7 +728,7 @@ october-arkpass/
 **By working on this project, every AI agent agrees to:**
 
 1. ✅ Read this document before starting work
-2. ✅ Update the Activity Log with every session
+2. ✅ Update the daily log **and** `CURRENT_STATUS.md` every session
 3. ✅ Commit and push all changes to GitHub
 4. ✅ Document all decisions and rationale
 5. ✅ Never make breaking changes without updating specs
@@ -633,7 +742,7 @@ october-arkpass/
 
 ---
 
-**END OF ARKPASS DEV TENET PRIME v1.0.0**
+**END OF ARKPASS DEV TENET PRIME v2.0.0**
 
-*Last verified by: Claude (2025-11-08)*
-*Next agent: Please update Activity Log and continue from "Recommended Next Steps"*
+*Last verified by: Agent Codex (2025-11-08)*
+*Next agent: Update `logs/YYYY-MM-DD.md` + `CURRENT_STATUS.md`, then continue from "Recommended Next Steps"*

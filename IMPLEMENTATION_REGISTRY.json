@@ -1,0 +1,161 @@
+{
+  "registry_version": "1.0.0",
+  "last_updated": "2025-11-08",
+  "purpose": "Machine-readable source tracking for all ArkPass implementations across multiple repositories",
+
+  "source_doors": {
+    "door-1": {
+      "door_number": 1,
+      "name": "october-arkpass",
+      "location": "/Users/ali/october-arkpass",
+      "type": "PRIMARY-ACTIVE",
+      "status": "🟢 MAIN",
+      "description": "Current development focus, single source of truth for all new work",
+      "key_features": [
+        "Database schema design",
+        "Figma screen specifications (91 screens)",
+        "OpenSpec proposals",
+        "FHIR harmonization mapping",
+        "Dual-mode date system",
+        "Migration scripts",
+        "Master coordination documents"
+      ],
+      "documentation_files": 33,
+      "last_audit": "2025-11-08",
+      "audited_by": "Session-1-Claude",
+      "notes": "THIS IS THE PRIMARY REPO - All consolidated work lands here"
+    },
+
+    "door-2": {
+      "door_number": 2,
+      "name": "INVIC-headless",
+      "location": "Supabase project: gqahazcatpgzzfujnidk",
+      "type": "PRODUCTION-DB",
+      "status": "🟡 ACTIVE",
+      "description": "Production PostgreSQL database (Supabase)",
+      "key_features": [
+        "Production database",
+        "Existing medications table",
+        "Existing conditions table"
+      ],
+      "documentation_files": 0,
+      "last_audit": "NOT YET INSPECTED",
+      "audited_by": null,
+      "notes": "Need to run EXTRACT_SCHEMA.sql to validate field mapping assumptions. READ-ONLY inspection. Migrations require explicit user approval."
+    },
+
+    "door-3": {
+      "door_number": 3,
+      "name": "armada-arkpass-v5",
+      "location": "/Users/ali/Downloads/armada-arkpass (5)",
+      "type": "PREVIOUS-IMPL",
+      "status": "🟡 REFERENCE",
+      "description": "Previous implementation with navigation components",
+      "key_features": [
+        "Dashboard component (Dashboard.tsx)",
+        "Enhanced Dashboard (EnhancedDashboard.tsx)",
+        "RecordsList component",
+        "Bottom navigation (Navbar.tsx)",
+        "SharedCard components",
+        "Layout wrappers (Layout, LayoutNoMidbar, LayoutDoctors)",
+        "Visit Notes components",
+        "DashboardWelcome",
+        "Logo component"
+      ],
+      "documentation_files": null,
+      "last_audit": "2025-11-08",
+      "audited_by": "Session-2-Claude",
+      "notes": "Contains dashboard and navigation infrastructure missing from Door 1. May be ported after user approval."
+    }
+  },
+
+  "pending_doors": [
+    {
+      "door_number": 4,
+      "name": "TBD - Awaiting user input",
+      "location": "TBD",
+      "type": "TBD",
+      "status": "🔴 PENDING",
+      "notes": "User indicated 6-7 different ArkPass implementations to provide"
+    },
+    {
+      "door_number": 5,
+      "name": "TBD - Awaiting user input",
+      "location": "TBD",
+      "type": "TBD",
+      "status": "🔴 PENDING",
+      "notes": "User indicated 6-7 different ArkPass implementations to provide"
+    },
+    {
+      "door_number": 6,
+      "name": "TBD - Awaiting user input",
+      "location": "TBD",
+      "type": "TBD",
+      "status": "🔴 PENDING",
+      "notes": "User indicated 6-7 different ArkPass implementations to provide"
+    },
+    {
+      "door_number": 7,
+      "name": "TBD - Awaiting user input",
+      "location": "TBD",
+      "type": "TBD",
+      "status": "🔴 PENDING",
+      "notes": "User indicated 6-7 different ArkPass implementations to provide"
+    },
+    {
+      "door_number": 8,
+      "name": "TBD - Awaiting user input",
+      "location": "TBD",
+      "type": "TBD",
+      "status": "🔴 PENDING",
+      "notes": "User indicated 6-7 different ArkPass implementations to provide"
+    },
+    {
+      "door_number": 9,
+      "name": "TBD - Awaiting user input",
+      "location": "TBD",
+      "type": "TBD",
+      "status": "🔴 PENDING",
+      "notes": "User indicated 6-7 different ArkPass implementations to provide"
+    }
+  ],
+
+  "consolidation_log": [
+    {
+      "date": "2025-11-08",
+      "doors_involved": ["door-1", "door-3"],
+      "feature": "Dashboard Navigation Specs",
+      "action": "REFERENCED",
+      "winner": "door-1",
+      "notes": "Door 1 created specs from Figma. Door 3 has existing implementation. No consolidation yet - awaiting user approval to port."
+    }
+  ],
+
+  "type_definitions": {
+    "PRIMARY-ACTIVE": "Current development focus, all new work goes here",
+    "PRODUCTION-DB": "Live database, read-only inspection, migrations require approval",
+    "PREVIOUS-IMPL": "Historical implementations with potentially useful code",
+    "REFERENCE": "Contains valuable docs/designs but outdated implementation",
+    "EXPERIMENTAL": "Skunkworks features, may be promoted or deprecated",
+    "DEPRECATED": "Do not use, kept for historical reference only"
+  },
+
+  "audit_workflow": {
+    "step_1": "Auditor Agent reviews door and creates audit file with SOURCE STAMP",
+    "step_2": "Audit file documents features found, code quality, Figma alignment",
+    "step_3": "Reconciler Agent builds comparison matrix between doors",
+    "step_4": "Reconciler identifies conflicts and recommends winners",
+    "step_5": "User approves consolidation plan",
+    "step_6": "BP Demolition Man executes consolidation",
+    "step_7": "Unifier Agent creates final unified OpenSpec",
+    "step_8": "Fresh implementation from unified spec (no porting)"
+  },
+
+  "rules": {
+    "source_stamp_required": "Every audit file MUST include door number, location, date, auditor",
+    "never_merge_without_tracking": "Document which door each piece came from",
+    "never_claim_without_door": "Always state door number when referencing features",
+    "always_update_registry": "Keep this file current with every door addition",
+    "always_note_conflicts": "When multiple doors implement same feature differently"
+  }
+}

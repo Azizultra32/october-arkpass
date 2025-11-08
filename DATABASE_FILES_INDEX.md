@@ -172,13 +172,56 @@
     - **Output**: All tables, columns, data types
     - **Use**: Run in Supabase SQL Editor to inspect current schema
 
+### Coordination & Source Tracking
+
+22. **`ARKPASS_DEV_TENET_PRIME.md`** ✅ MASTER DOCUMENT (640+ lines)
+   - **Status**: ACTIVE CANONICAL SOURCE OF TRUTH
+   - **Purpose**: Master coordination document for ALL AI agents across ALL repositories
+   - **Covers**:
+     - Grandmaster Ali Constitution (1·3·9 command structure)
+     - Repository Status Matrix
+     - Complete file inventory
+     - Agent Activity Log with session templates
+     - Decision Authority Matrix
+     - Source Tracking Protocol with Door Numbering System
+     - Agent Roles (BP Demolition Man, Auditor, Reconciler, Skunkworks, Unifier)
+     - Layered Context System (CURRENT_STATUS.md, daily logs, deep archive)
+     - tmux operations and clock-in/clock-out procedures
+   - **Use**: MANDATORY read before ANY work - single source of truth for coordination
+
+23. **`IMPLEMENTATION_REGISTRY.json`** ✅ JUST CREATED
+   - **Status**: Machine-readable source tracking
+   - **Purpose**: Registry of all ArkPass implementations with door numbering
+   - **Covers**:
+     - Door 1: october-arkpass (PRIMARY-ACTIVE)
+     - Door 2: INVIC-headless (PRODUCTION-DB)
+     - Door 3: armada-arkpass-v5 (PREVIOUS-IMPL)
+     - Doors 4-9: Pending (awaiting user input)
+     - Consolidation log
+     - Type definitions and audit workflow
+   - **Use**: Track which repo each feature/doc came from, update with every new door
+
+24. **`AUDIT_TEMPLATE.md`** ✅ JUST CREATED (350+ lines)
+   - **Status**: Standard audit format
+   - **Purpose**: Template for auditing any ArkPass repository/implementation
+   - **Covers**:
+     - Mandatory SOURCE STAMP header format
+     - File structure inventory sections
+     - Feature comparison matrix
+     - Database schema analysis
+     - Code quality assessment
+     - Figma alignment analysis
+     - Unique features (Skunkworks) identification
+     - Migration impact assessment
+   - **Use**: Copy this template when auditing new doors (repositories)
+
 ---
 
 ## Feature Screen Specs (Reference)
 
 ### Patient Health Record Features
 
-22. **`DASHBOARD_NAVIGATION_SCREENS_SPECS.md`** ✅ JUST CREATED (16 sections, ~800 lines)
+25. **`DASHBOARD_NAVIGATION_SCREENS_SPECS.md`** ✅ JUST CREATED (16 sections, ~800 lines)
    - **Status**: PRODUCTION READY - Complete navigation specification
    - **Purpose**: Core app navigation, authentication, dashboard, sharing, and pre-visit questionnaire
    - **Covers**:
@@ -194,7 +237,7 @@
    - **Total Screens**: 9 core navigation screens
    - **Use**: Reference for implementing authentication, dashboard, and sharing features
 
-23-32. **`{FEATURE}_SCREENS_SPECS.md`** (10 files, 7200 total lines)
+26-35. **`{FEATURE}_SCREENS_SPECS.md`** (10 files, 7200 total lines)
 - `MEDICATIONS_SCREENS_SPECS.md` (568 lines)
 - `ALLERGIES_SCREENS_SPECS.md` (828 lines)
 - `CONDITIONS_SCREENS_SPECS.md` (513 lines)
@@ -230,6 +273,9 @@
 | Implement access code sharing | `DASHBOARD_NAVIGATION_SCREENS_SPECS.md` (Sections 3-5) |
 | Implement pre-visit questionnaire | `DASHBOARD_NAVIGATION_SCREENS_SPECS.md` (Section 6) |
 | Implement bottom navigation | `DASHBOARD_NAVIGATION_SCREENS_SPECS.md` (Section 7) |
+| Audit new repository | Copy `AUDIT_TEMPLATE.md` and fill out |
+| Track repository source | Update `IMPLEMENTATION_REGISTRY.json` with new door |
+| Coordinate multi-agent work | Follow `ARKPASS_DEV_TENET_PRIME.md` clock-in/out |
 
 ---
 
@@ -241,6 +287,8 @@
 - Field mapping matrix (`INVIC_VS_ARKPASS_FIELD_MAPPING.md`)
 - Migration testing guides (3 files in `scripts/`)
 - Dashboard & navigation specification (`DASHBOARD_NAVIGATION_SCREENS_SPECS.md`)
+- Source tracking system (`IMPLEMENTATION_REGISTRY.json`, `AUDIT_TEMPLATE.md`)
+- Master coordination document (`ARKPASS_DEV_TENET_PRIME.md`)
 
 ### ⚠️ Outdated (Do Not Use)
 - `FHIR_SCHEMA_MIGRATIONS_PRODUCTION.sql` (old, no dual-mode dates)
@@ -252,21 +300,31 @@
 - Phase 1-4 migration scripts (create missing tables)
 - RLS policy scripts
 - API endpoint implementation
+- Audit of 6-7 additional ArkPass implementations (Doors 4-9)
+- Consolidation of duplicate features across doors (BP Demolition Man)
 
 ---
 
 ## Next Actions
 
-1. **Validate field mapping**: Review `INVIC_VS_ARKPASS_FIELD_MAPPING.md` for accuracy
-2. **Inspect INVIC schema**: Run `scripts/EXTRACT_SCHEMA.sql` to confirm assumptions
-3. **Create OpenSpec proposals**: For dual-mode dates, supplements, allergy safety, etc.
-4. **Test migrations**: Use `scripts/MIGRATION_TESTING_GUIDE.md` in dev Supabase
-5. **Build Phase 1-4 scripts**: Create remaining 21 tables
+1. **Await user input**: User will provide paths to 6-7 additional ArkPass implementations
+2. **Assign door numbers**: Update `IMPLEMENTATION_REGISTRY.json` for each new repo
+3. **Audit each implementation**: Use `AUDIT_TEMPLATE.md` for systematic review
+4. **Identify redundancy**: Compare features across all doors
+5. **Call BP Demolition Man**: Consolidate duplicate specs into single sources
+6. **Validate field mapping**: Review `INVIC_VS_ARKPASS_FIELD_MAPPING.md` for accuracy
+7. **Inspect INVIC schema**: Run `scripts/EXTRACT_SCHEMA.sql` to confirm assumptions
+8. **Create OpenSpec proposals**: For dual-mode dates, supplements, allergy safety, etc.
+9. **Test migrations**: Use `scripts/MIGRATION_TESTING_GUIDE.md` in dev Supabase
+10. **Build Phase 1-4 scripts**: Create remaining 21 tables
 
 ---
 
 **File Organization Principle**:
-- **Root directory**: Historical/reference FHIR docs
+- **Root directory**: Historical/reference FHIR docs + coordination files
 - **`scripts/` directory**: Production-ready migration scripts + guides
 - **`openspec/changes/` directory**: OpenSpec proposals and specs
 - **Feature specs**: Individual `*_SCREENS_SPECS.md` files
+- **Coordination**: `ARKPASS_DEV_TENET_PRIME.md`, `IMPLEMENTATION_REGISTRY.json`, `AUDIT_TEMPLATE.md`
+
+**Total Files in Repository**: 36 (33 original + 3 new coordination files)

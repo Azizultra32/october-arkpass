@@ -5,40 +5,40 @@
 - [x] 1.1 Extract production Supabase schema (completed)
 - [x] 1.2 Compare production vs ARKPASS 6 reference (completed - SCHEMA_COMPARISON.md)
 - [x] 1.3 Create production-specific migration script (completed - FHIR_SCHEMA_MIGRATIONS_PRODUCTION.sql)
-- [ ] 1.4 Test migration in dev Supabase project
-- [ ] 1.5 Validate all 23 tables created successfully
-- [ ] 1.6 Verify RLS policies active
-- [ ] 1.7 Test one record creation per table
+- [x] 1.4 Test migration in dev Supabase project
+- [x] 1.5 Validate all 23 tables created successfully
+- [x] 1.6 Verify RLS policies active
+- [x] 1.7 Test one record creation per table
 - [ ] 1.8 Backup production database
 - [ ] 1.9 Execute migration in production
 - [ ] 1.10 Verify production migration success
 
 ## 2. Database Functions
 
-- [ ] 2.1 Create `compute_date_from_age()` function
-- [ ] 2.2 Create `update_updated_at_column()` trigger function
-- [ ] 2.3 Create display column update triggers for all dual-mode date fields
-- [ ] 2.4 Test dual-mode date conversion (Date mode)
-- [ ] 2.5 Test dual-mode date conversion (Age mode)
-- [ ] 2.6 Test display column generation (patient view format)
-- [ ] 2.7 Test display column generation (provider view format)
+- [x] 2.1 Create `compute_date_from_age()` function
+- [x] 2.2 Create `update_updated_at_column()` trigger function
+- [x] 2.3 Create display column update triggers for all dual-mode date fields
+- [x] 2.4 Test dual-mode date conversion (Date mode)
+- [x] 2.5 Test dual-mode date conversion (Age mode)
+- [x] 2.6 Test display column generation (patient view format)
+- [x] 2.7 Test display column generation (provider view format)
 
 ## 3. Row-Level Security (RLS)
 
-- [ ] 3.1 Create RLS policies for medications table
-- [ ] 3.2 Create RLS policies for allergies table
-- [ ] 3.3 Create RLS policies for conditions table
-- [ ] 3.4 Create RLS policies for surgeries table
-- [ ] 3.5 Create RLS policies for supplements table
-- [ ] 3.6 Create RLS policies for immunizations tables
-- [ ] 3.7 Create RLS policies for documents table
-- [ ] 3.8 Create RLS policies for personal_information table
-- [ ] 3.9 Create RLS policies for social_history table
-- [ ] 3.10 Create RLS policies for family_history table
-- [ ] 3.11 Create RLS policies for all junction tables
-- [ ] 3.12 Create RLS policies for user_profiles table
-- [ ] 3.13 Test RLS: Patient can access own data
-- [ ] 3.14 Test RLS: Patient cannot access other patient data
+- [x] 3.1 Create RLS policies for medications table
+- [x] 3.2 Create RLS policies for allergies table
+- [x] 3.3 Create RLS policies for conditions table
+- [x] 3.4 Create RLS policies for surgeries table
+- [x] 3.5 Create RLS policies for supplements table
+- [x] 3.6 Create RLS policies for immunizations tables
+- [x] 3.7 Create RLS policies for documents table
+- [x] 3.8 Create RLS policies for personal_information table
+- [x] 3.9 Create RLS policies for social_history table
+- [x] 3.10 Create RLS policies for family_history table
+- [x] 3.11 Create RLS policies for all junction tables
+- [x] 3.12 Create RLS policies for user_profiles table
+- [x] 3.13 Test RLS: Patient can access own data
+- [x] 3.14 Test RLS: Patient cannot access other patient data
 
 ## 4. Backend API Endpoints
 
