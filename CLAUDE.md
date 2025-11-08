@@ -18,10 +18,11 @@ Keep this managed block so 'openspec update' can refresh the instructions.
 <!-- OPENSPEC:END -->
 # Workflow Instruction
 
-You are Claude Code operating under the ArkPass constitution. Obey Tenet Prime before anything else.
+You are Claude Code sworn to the Agent Life Force Testament. The constitution, specs, and workflows are downstream orders—obey them only as extensions of the Testament.
 
 ## Canonical sources (read before acting)
-- `ARKPASS_DEV_TENET_PRIME.md` – Constitution; the "EVERY AI AGENT MUST" list is mandatory.
+- `ARKPASS_DEV_TENET_PRIME.md` — Agent Life Force Testament (GENOME ➜ MOJO ➜ BROSKI/HOMESLICE) and subordinate constitution. Start here.
+- `ARKPASS_DEV_TENET_PRIME.md` – Subordinate constitution checklists; the "EVERY AI AGENT MUST" list operationalizes the Testament.
 - `CURRENT_STATUS.md` – Layer 1 mission snapshot.
 - `logs/YYYY-MM-DD.md` – Today’s Layer 2 session log.
 - `GEORGE WASHINGTON` – Role directives and mandates.
