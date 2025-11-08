@@ -1,7 +1,7 @@
 # Database & FHIR Files Index
 
 **Purpose**: Master index of all database schema, FHIR harmonization, and migration files in this repository
-**Last Updated**: 2025-11-07
+**Last Updated**: 2025-11-08
 
 ---
 
@@ -178,7 +178,23 @@
 
 ### Patient Health Record Features
 
-22-31. **`{FEATURE}_SCREENS_SPECS.md`** (10 files, 7200 total lines)
+22. **`DASHBOARD_NAVIGATION_SCREENS_SPECS.md`** ✅ JUST CREATED (16 sections, ~800 lines)
+   - **Status**: PRODUCTION READY - Complete navigation specification
+   - **Purpose**: Core app navigation, authentication, dashboard, sharing, and pre-visit questionnaire
+   - **Covers**:
+     - Authentication screens (Google, Apple, Mobile Phone, SMS confirmation)
+     - Patient Dashboard with health record cards
+     - Visit Notes management with doctor access tracking
+     - Access Code sharing system (48h/1week/1month/custom durations)
+     - Pre-Visit Questionnaire workflow (text response, yes/no questions)
+     - Bottom navigation bar (5 icons: Home, Calendar, Plus, Key, Account)
+     - Access code card states (Active/Yellow, Unused/Orange, Pre-Visit/Gray, Expired/White)
+   - **Database Tables**: access_codes, pre_visit_questionnaires, visit_notes
+   - **API Endpoints**: auth, access-codes, visit-notes, questionnaires, dashboard
+   - **Total Screens**: 9 core navigation screens
+   - **Use**: Reference for implementing authentication, dashboard, and sharing features
+
+23-32. **`{FEATURE}_SCREENS_SPECS.md`** (10 files, 7200 total lines)
 - `MEDICATIONS_SCREENS_SPECS.md` (568 lines)
 - `ALLERGIES_SCREENS_SPECS.md` (828 lines)
 - `CONDITIONS_SCREENS_SPECS.md` (513 lines)
@@ -209,6 +225,11 @@
 | Build date input component | `DUAL_MODE_DATE_INPUT_COMPONENT.md` |
 | Validate migration success | `SCHEMA_VALIDATION_CHECKLIST.md` |
 | Inspect INVIC schema | Run `scripts/EXTRACT_SCHEMA.sql` in Supabase |
+| Implement authentication | `DASHBOARD_NAVIGATION_SCREENS_SPECS.md` (Section 1) |
+| Implement dashboard | `DASHBOARD_NAVIGATION_SCREENS_SPECS.md` (Section 2) |
+| Implement access code sharing | `DASHBOARD_NAVIGATION_SCREENS_SPECS.md` (Sections 3-5) |
+| Implement pre-visit questionnaire | `DASHBOARD_NAVIGATION_SCREENS_SPECS.md` (Section 6) |
+| Implement bottom navigation | `DASHBOARD_NAVIGATION_SCREENS_SPECS.md` (Section 7) |
 
 ---
 
@@ -219,6 +240,7 @@
 - Enhanced migration with dates (`scripts/enhanced-migration-with-dates.sql`)
 - Field mapping matrix (`INVIC_VS_ARKPASS_FIELD_MAPPING.md`)
 - Migration testing guides (3 files in `scripts/`)
+- Dashboard & navigation specification (`DASHBOARD_NAVIGATION_SCREENS_SPECS.md`)
 
 ### ⚠️ Outdated (Do Not Use)
 - `FHIR_SCHEMA_MIGRATIONS_PRODUCTION.sql` (old, no dual-mode dates)
