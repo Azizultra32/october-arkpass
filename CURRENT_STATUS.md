@@ -107,7 +107,32 @@
   - consigliere/SESSION_TIMELINE.md — Session timestamp tracking
 - **Performance Target**: >90% temporary approval alignment with Ali retroactive decisions, <2hr response time for time-sensitive matters
 - **First Briefing**: BRIEFING-2025-11-08-01 (Constitutional Crisis Resolution)
-- **Next**: Ali reviews BRIEFING-2025-11-08-01 and issues decree on Option A/B/C
+- **Next**: Session 8 Consigliere updates briefing with 5 CIPs + Ali reviews + issues decree
+
+### Mission Hotel — Critical Constitutional Gap Remediation 🔴 URGENT
+- **Status**: ACTIVE ⏳ | 48-hour execution timeline
+- **Door**: Door-01 (october-arkpass)
+- **Assignment**: Constitution Keeper (Session 7-9) + Consigliere (Session 8) + Adjudicator (Session 10)
+- **Blocker**: 23 constitutional gaps identified (8 CRITICAL, 9 HIGH, 6 MEDIUM)
+- **Critical Gaps**:
+  1. No Agent Removal/Retirement Protocol
+  2. No Cross-Session Agent Identity Tracking
+  3. No Consigliere Conflict of Interest Rules
+  4. No Unified Constitutional Emergency Protocol
+  5. No Definition of "Ali Unavailable"
+  6. No Precedent Registry System
+  7. No Multi-Repository Governance
+  8. No Multi-Agent Collaboration Rules
+- **Execution Plan**:
+  - **Hour 0-6**: Session 7 Constitution Keeper drafts 5 priority CIPs
+  - **Hour 6-12**: Session 8 Consigliere updates BRIEFING-2025-11-08-01 with 6 matters
+  - **Hour 12-24**: Ali reviews briefing and issues decrees
+  - **Hour 24-36**: Session 9 Constitution Keeper implements v2.4.0
+  - **Hour 36-48**: Session 10 Adjudicator verifies compliance + Prime notifies agents
+- **Documents**:
+  - adjudications/2025-11/OUTSTANDING_ITEMS_NOT_FOUND_IN_CONSTITUTION.md (gap analysis)
+  - adjudications/2025-11/CRITICAL_GAPS_EXECUTION_PLAN.md (48hr timeline)
+- **Next**: Session 7 starts Hour 0 (Constitution Keeper drafts CIPs)
 
 ### Mission Foxtrot — UI/UX Excellence via The Twins
 - **Status**: ACTIVE ONGOING 🔄 | ALL Tea Ceremonies route through Consigliere
