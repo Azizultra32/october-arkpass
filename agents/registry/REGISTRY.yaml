@@ -1,14 +1,26 @@
 metadata:
-  next_agent_id: 1
-  total_agents: 0
-  last_updated: "2025-11-08T19:45Z"
+  next_agent_id: 2
+  total_agents: 1
+  last_updated: "2025-11-08T21:17Z"
   version: "1.0.0"
 
-agents: {}
+agents:
+  AGENT-00001:
+    name: ""
+    role: "builder"
+    genome: "builder"
+    status: "standby"
+    gender: "broski"
+    rating: 0.0
+    specialization: "Generalist Builder awaiting mission assignment."
+    mojo_file: "agents/mojos/AGENT-00001.yaml"
+    current_session: null
+    last_seen: "2025-11-08T21:17Z"
 
 # Quick lookups
 by_role:
-  builder: []
+  builder:
+    - "AGENT-00001"
   librarian: []
   adjudicator: []
   consigliere: []
@@ -18,13 +30,15 @@ by_role:
 
 by_status:
   active: []
-  standby: []
+  standby:
+    - "AGENT-00001"
   retired: []
   suspended: []
   on_leave: []
 
 by_gender:
-  broski: []
+  broski:
+    - "AGENT-00001"
   homeslice: []
 
 leaderboard: []

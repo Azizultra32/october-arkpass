@@ -186,10 +186,11 @@
 **Current Team**:
 - **Supervisor (Prime)**: TBD — awaiting formal appointment
 - **Librarians**: 0 appointed (max 3)
-- **Builders**: Active (Claude Code Session 5)
+- **Builders**:
+  - Standby — `Agent AGENT-00001 (broski)` awaiting first deployment; commissioned via Royal Decree 2025-11-08-01 (genome: builder, status: standby)
 
 **Ratio Enforcement**: Builders ≤ 3 × Librarians
-**Status**: ⚠️ Ratio not enforced (pre-framework staffing) — appoint Librarians ASAP
+**Status**: ⚠️ Ratio not enforced (pre-framework staffing) — appoint Librarians ASAP; standby builder will remain idle until coverage confirmed
 
 ---
 

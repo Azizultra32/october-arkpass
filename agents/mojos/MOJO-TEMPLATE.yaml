@@ -43,7 +43,7 @@ evaluations:
     velocity: 0.0
 
   peer_reviews: []
-  supervisor_notes: []
+  supervisor_notes: []  # First entry logs Mithraic Oath timestamp + context reading
   violations: []
 
 # GOALS & CAREER
