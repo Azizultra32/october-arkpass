@@ -1,0 +1,1 @@
+/usr/local/Cellar/postgresql@14/14.15/bin/postgres "-D" "tmp/pgdata" "-F" "-p" "5433"

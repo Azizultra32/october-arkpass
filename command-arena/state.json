@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-11-08T19:16:34.094Z",
+  "missionControl": {
+    "id": "48707",
+    "status": "OPERATIONAL ✅"
+  },
+  "doors": [],
+  "missions": [
+    {
+      "id": "Alpha",
+      "name": "FHIR Database Harmonization",
+      "status": "Phase 4 (Dev Postgres validated) ✅"
+    },
+    {
+      "id": "Bravo",
+      "name": "Command Arena Dashboard",
+      "status": "Phase 0 MVP COMPLETE ✅ | Racing for \"King\" title"
+    },
+    {
+      "id": "Charlie",
+      "name": "ByteRover MCP Integration",
+      "status": "COMPLETE ✅"
+    },
+    {
+      "id": "Delta",
+      "name": "ArkPass Dev Tenet Prime Constitution",
+      "status": "v2.0.0 COMPLETE ✅"
+    }
+  ],
+  "staffing": {
+    "supervisor": "TBD — awaiting formal appointment",
+    "librarians": "0 appointed (max 3)",
+    "builders": "Active (Claude Code Session 5)"
+  },
+  "flashMessages": [],
+  "sessions": [
+    {
+      "id": 1,
+      "agent": "Claude",
+      "startTime": "2025-11-08T02:30Z",
+      "endTime": "2025-11-08T03:40Z",
+      "role": "Librarian (Pre-Framework)"
+    },
+    {
+      "id": 2,
+      "agent": "Claude",
+      "startTime": "2025-11-08T14:45Z",
+      "endTime": "2025-11-08T15:35Z",
+      "role": "Librarian (Pre-Framework)"
+    },
+    {
+      "id": 3,
+      "agent": "Codex",
+      "startTime": "2025-11-08T19:15Z",
+      "endTime": "2025-11-08T21:10Z",
+      "role": "Builder"
+    },
+    {
+      "id": 4,
+      "agent": "Codex",
+      "startTime": "2025-11-08T22:05Z",
+      "endTime": "2025-11-08T23:25Z",
+      "role": "Librarian/Constitution Builder"
+    },
+    {
+      "id": 5,
+      "agent": "Claude Code",
+      "startTime": "2025-11-08T09:00Z",
+      "endTime": "2025-11-08T11:45Z",
+      "role": "Librarian/Builder"
+    }
+  ],
+  "lastUpdated": "2025-11-08T11:45Z (Session 5)"
+}

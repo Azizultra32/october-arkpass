@@ -40,19 +40,21 @@
 - **Next**: User approval to deploy to Supabase production
 
 ### Mission Bravo — Command Arena Dashboard
-- **Status**: Phase 0 MVP (PENDING BUILD) 🚧
+- **Status**: Phase 0 MVP COMPLETE ✅ | Racing for "King" title
 - **Door**: Door-01 (october-arkpass)
 - **Competition**: "Build your own version and winner gets title called King"
-- **Requirements**:
-  - Structured command tree: Prime → 3 Librarians → Builders → Door cards
-  - Animated: breathing nodes, neon pulse cables, bumper-car physics
-  - NOT force-directed graph — purposeful hierarchy
-  - Majestic clearance level — "shit their pants" impressive
-  - Phase 0: HTML + vanilla JS (3 colored boxes)
-  - Scales to: CIA×Mossad command center (React + Canvas + 3D)
-- **Extra Points**: Neon effects, emergency broadcasts
-- **Blocker**: None — ready to build
-- **Next**: Create Phase 0 MVP (watcher script + HTML dashboard)
+- **Deployed**: http://localhost:8000 (watcher running, 2s refresh)
+- **Phase 0 Delivered**:
+  - ✅ Structured command tree: Prime → 3 Librarians → 3 Builders → 2 Door cards
+  - ✅ Neon pulse cables with animated particles (red Prime→Libs, blue Libs→Builders)
+  - ✅ Breathing node animations (3s cycle, organic scale/opacity)
+  - ✅ Emergency broadcast flash message system (red pulse banner)
+  - ✅ Real-time state updates (CURRENT_STATUS + logs → state.json every 2s)
+  - ✅ NOT force-directed graph — purposeful hierarchy
+- **Extra Points Awarded**: Neon effects + emergency broadcasts + breathing animations
+- **Files**: command-arena/{watcher.js, index.html, arena.js, README.md}
+- **Commit**: f30f181 (pushed to GitHub)
+- **Next**: Scale to Phase 1 (React + SVG) or await "King" title announcement
 
 ### Mission Charlie — ByteRover MCP Integration
 - **Status**: COMPLETE ✅

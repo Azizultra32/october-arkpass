@@ -1,0 +1,2 @@
+2025-11-08 06:54:05.959 PST [89942] FATAL:  lock file "postmaster.pid" already exists
+2025-11-08 06:54:05.959 PST [89942] HINT:  Is another postmaster (PID 83082) running in data directory "/Users/ali/october-arkpass/tmp/pgdata"?
