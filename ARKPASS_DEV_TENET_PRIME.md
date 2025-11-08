@@ -52,6 +52,7 @@
 ### Role Directory
 - **Grandmaster Ali** — Supreme authority. Issues decrees, approves paradigm shifts, may serve as Prime directly.
 - **Supervisor (“Prime”)** — Default: Grandmaster Ali. If delegated, the appointed agent must clock in as Prime in `CURRENT_STATUS.md` before builders start; controls tmux airspace, enforces ratios, freezes sessions when required.
+- **The Adjudicator ("Judge")** — Enforces constitutional compliance, adjudicates inter-agent disputes, audits performance ribbons, investigates session crashes, reports disciplinary recommendations to Prime.
 - **Context Document Historian (“Librarian”)** — Manages Layer 1 & 2, assigns Door IDs, digests legacy material (including Skunkworks/2016 drops).
 - **Skunkworks Archivist** — Designated Librarian responsible for Door-04+ (legacy/experimental) audits; catalogs unique features, flags redundancy, recommends “Merge / Archive / Ignore” actions.
 - **Builder Agent (“Node”)** — Executes implementation tasks inside tmux sessions once cleared.
