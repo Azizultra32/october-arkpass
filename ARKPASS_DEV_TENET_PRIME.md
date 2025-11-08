@@ -50,24 +50,6 @@
 - **Layer 3 — Deep Archive**: Tenet Prime appendices, specs, legacy repos, Figma extracts. Librarians decide what surfaces upward.
 - **Token Estimation Guidance**: Treat ~4 characters ≈ 1 token. Loading `CURRENT_STATUS` (~2k) + today's log (~3k) + three specs (~10k) already consumes ~15k tokens—log your estimate at each checkpoint.
 
-### ByteRover MCP (Context Delivery Mechanism)
-**What It Does**: Streams the 3 core files to agents at session start, then exits. Zero memory. Dumb pipe.
-
-**The ByteRover ABC:**
-- **A. Stream ARKPASS_DEV_TENET_PRIME.md** (this constitution) to agent
-- **B. Stream CURRENT_STATUS.md** (Layer 1 snapshot) to agent
-- **C. Stream logs/YYYY-MM-DD.md** (today's daily log) to agent
-- **Exit immediately** — No thinking, no memory, no decisions
-
-**That's it.** ByteRover does NOT:
-- ❌ Interpret instructions
-- ❌ Make decisions
-- ❌ Search for files
-- ❌ Have memory or context retention
-- ❌ Execute any commands
-
-**The agent reads the 3 files ByteRover delivered, then follows the constitution.** ByteRover's job ends the moment it finishes streaming ABC.
-
 ### Role Directory
 - **Grandmaster Ali** — Supreme authority. Issues decrees, approves paradigm shifts, may serve as Prime directly.
 - **Supervisor ("Prime")** — Default: Grandmaster Ali. If delegated, the appointed agent must clock in as Prime in `CURRENT_STATUS.md` before builders start; controls tmux airspace, enforces ratios, freezes sessions when required.

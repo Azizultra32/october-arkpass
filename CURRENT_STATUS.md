@@ -56,13 +56,9 @@
 - **Commit**: f30f181 (pushed to GitHub)
 - **Next**: Scale to Phase 1 (React + SVG) or await "King" title announcement
 
-### Mission Charlie — ByteRover MCP Integration
-- **Status**: COMPLETE ✅
-- **Door**: Door-01 (october-arkpass)
-- **Implementation**: Lightweight "dumb pipe" — streams Constitution + CURRENT_STATUS + logs at session start, then exits
-- **Zero memory retention** — no costs, just context delivery
-- **Config**: `~/.claude.json` → byterover-mcp HTTP transport
-- **Next**: Initialize ByteRover context delivery at next session start
+### Mission Charlie — (DELETED)
+- **Status**: DELETED
+- **Reason**: ByteRover auto-streaming incompatible with actual implementation
 
 ### Mission Echo — Constitutional Improvement (Constitution Keeper)
 - **Status**: ACTIVE ONGOING 🔄 | ALL CIPs route through Consigliere
@@ -215,19 +211,12 @@
 - **Purpose**: Historical context (30+ days old)
 - **Status**: PENDING — create when logs age out
 
-### ByteRover MCP (Context Delivery)
-- **Status**: CONFIGURED ✅
-- **Streams**: Constitution + CURRENT_STATUS + Daily Log
-- **Mode**: Dumb pipe — no memory retention
-- **Next**: Initialize at next session start
-
 ---
 
 ## Recent Deliverables (Last 24 Hours)
 
 **Session 5 (Current)**:
 - Enhanced ARKPASS_DEV_TENET_PRIME.md (v2.0.0 → v2.1.0 → v2.2.0)
-- ByteRover MCP integration (~/.claude.json)
 - Command Arena Phase 0 MVP (watcher.js, index.html, arena.js, README.md)
 - Updated CURRENT_STATUS.md (this file)
 - Updated logs/2025-11-08.md (Session 5 logged)
