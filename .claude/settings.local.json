@@ -14,7 +14,19 @@
       "Bash(brv add:*)",
       "Bash(security find-generic-password -s \"byterover\")",
       "Bash(brv push:*)",
-      "Bash(brv gen-rules:*)"
+      "Bash(brv gen-rules:*)",
+      "Bash(curl:*)",
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "Bash(./scripts/agent-summon.sh:*)",
+      "Bash(git checkout:*)",
+      "Bash(tree:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(find:*)",
+      "Bash(git rm:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

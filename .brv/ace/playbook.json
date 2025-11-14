@@ -1,5 +1,21 @@
 {
-  "bullets": {},
-  "nextId": 1,
-  "sections": {}
+  "bullets": {
+    "instructions-00001": {
+      "id": "instructions-00001",
+      "metadata": {
+        "relatedFiles": [],
+        "tags": [
+          "manual"
+        ],
+        "timestamp": "2025-11-08T20:32:58.439Z"
+      },
+      "section": "Instructions"
+    }
+  },
+  "nextId": 2,
+  "sections": {
+    "Instructions": [
+      "instructions-00001"
+    ]
+  }
 }
